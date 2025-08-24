@@ -185,30 +185,94 @@ export default function HomePage() {
                 {t("challenges.description")}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-red-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-red-700 mb-3">
-                    🌐 {t("challenges.scatteredInfo.title")}
-                  </h3>
-                  <p className="text-gray-600">
-                    {t("challenges.scatteredInfo.description")}
-                  </p>
-                </div>
-                <div className="bg-yellow-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-yellow-700 mb-3">
-                    🏢 {t("challenges.officeVisits.title")}
-                  </h3>
-                  <p className="text-gray-600">
-                    {t("challenges.officeVisits.description")}
-                  </p>
-                </div>
-                <div className="bg-red-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-red-700 mb-3">
-                    ❌ {t("challenges.documentRejections.title")}
-                  </h3>
-                  <p className="text-gray-600">
-                    {t("challenges.documentRejections.description")}
-                  </p>
-                </div>
+                {[
+                  {
+                    image: "/images/ps/Scattered_Information.png",
+                    title: t("challenges.scatteredInfo.title"),
+                    description: t("challenges.scatteredInfo.description"),
+                    color: "red",
+                    emoji: "🌐"
+                  },
+                  {
+                    image: "/images/ps/Office_Visits_Required.png", 
+                    title: t("challenges.officeVisits.title"),
+                    description: t("challenges.officeVisits.description"),
+                    color: "yellow",
+                    emoji: "🏢"
+                  },
+                  {
+                    image: "/images/ps/Document_Rejections.png",
+                    title: t("challenges.documentRejections.title"), 
+                    description: t("challenges.documentRejections.description"),
+                    color: "red",
+                    emoji: "❌"
+                  }
+                ].map((challenge, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    whileHover={{ 
+                      y: -10, 
+                      scale: 1.02,
+                      transition: { duration: 0.3 }
+                    }}
+                    transition={{ 
+                      duration: 0.6, 
+                      delay: index * 0.2,
+                      type: "spring",
+                      stiffness: 100
+                    }}
+                    className={`bg-gradient-to-br from-${challenge.color}-50 to-${challenge.color}-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-${challenge.color}-200 group overflow-hidden relative`}
+                  >
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 opacity-5">
+                      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-900" />
+                    </div>
+                    
+                    {/* Image Container */}
+                    <motion.div 
+                      className="relative mb-6 rounded-lg overflow-hidden shadow-md"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="aspect-video relative bg-white p-4">
+                        <Image
+                          src={challenge.image}
+                          alt={challenge.title}
+                          fill
+                          className="object-contain group-hover:scale-110 transition-transform duration-500"
+                        />
+                      </div>
+                    </motion.div>
+
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: index * 0.2 + 0.3 }}
+                        className="flex items-center mb-3"
+                      >
+                        <span className="text-2xl mr-3 animate-pulse">{challenge.emoji}</span>
+                        <h3 className={`text-xl font-bold text-${challenge.color}-700 group-hover:text-${challenge.color}-800 transition-colors`}>
+                          {challenge.title}
+                        </h3>
+                      </motion.div>
+                      <motion.p 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: index * 0.2 + 0.4 }}
+                        className="text-gray-700 leading-relaxed"
+                      >
+                        {challenge.description}
+                      </motion.p>
+                    </div>
+
+                    {/* Hover Glow Effect */}
+                    <div className={`absolute inset-0 bg-gradient-to-br from-${challenge.color}-400/0 to-${challenge.color}-600/0 group-hover:from-${challenge.color}-400/5 group-hover:to-${challenge.color}-600/10 transition-all duration-300 rounded-xl`} />
+                  </motion.div>
+                ))}
               </div>
             </div>
           </motion.div>
