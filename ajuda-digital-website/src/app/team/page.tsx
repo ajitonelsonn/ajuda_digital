@@ -121,8 +121,8 @@ export default function TeamPage() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-100"
               >
                 {/* Profile Image */}
@@ -132,6 +132,9 @@ export default function TeamPage() {
                     alt={`${member.name} - ${member.role}`}
                     fill
                     className="object-cover transition-transform hover:scale-105"
+                    priority={index === 0}
+                    loading={index < 3 ? "eager" : "lazy"}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     onError={(e) => {
                       // Fallback to initials if image fails to load
                       e.currentTarget.style.display = "none";
