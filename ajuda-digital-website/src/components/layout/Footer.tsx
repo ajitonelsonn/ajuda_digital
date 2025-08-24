@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Github, Mail, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="relative bg-gray-900 text-white overflow-hidden">
       {/* Background Image */}
@@ -31,25 +34,24 @@ export default function Footer() {
               <span className="text-xl font-bold">Ajuda Digital</span>
             </div>
             <p className="text-gray-400 max-w-md">
-              Empowering Timorese citizens with AI-powered government service
-              assistance. Built by young developers for their country.
+              {t("footer.description")}
             </p>
             <div className="flex items-center space-x-2 mt-4 text-sm text-gray-500">
               <MapPin size={16} />
-              <span>Made in Timor-Leste 🇹🇱</span>
+              <span>{t("footer.madeInTimorLeste")} 🇹🇱</span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">{t("footer.quickLinks")}</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Home
+                  {t("header.home")}
                 </Link>
               </li>
               <li>
@@ -57,7 +59,7 @@ export default function Footer() {
                   href="/team"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Team
+                  {t("header.team")}
                 </Link>
               </li>
               <li>
@@ -65,7 +67,7 @@ export default function Footer() {
                   href="/datasets"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Datasets
+                  {t("header.datasets")}
                 </Link>
               </li>
             </ul>
@@ -73,7 +75,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect</h3>
+            <h3 className="text-lg font-semibold mb-4">{t("footer.connect")}</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -81,7 +83,7 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white transition-colors flex items-center space-x-2"
                 >
                   <Mail size={16} />
-                  <span>Contact Us</span>
+                  <span>{t("footer.contactUs")}</span>
                 </a>
               </li>
               <li>
@@ -90,7 +92,7 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white transition-colors flex items-center space-x-2"
                 >
                   <Github size={16} />
-                  <span>GitHub</span>
+                  <span>{t("footer.github")}</span>
                 </a>
               </li>
             </ul>
@@ -99,10 +101,10 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Ajuda Digital. Built with ❤️ in Timor-Leste.
+            {t("footer.copyright")}
           </p>
           <p className="text-gray-400 text-sm mt-2 sm:mt-0">
-            Powered by SEA-LION AI Model
+            {t("footer.poweredBy")}
           </p>
         </div>
       </div>

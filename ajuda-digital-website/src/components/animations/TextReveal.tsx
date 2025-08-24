@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useRef, useEffect } from "react";
 
 interface TextRevealProps {
@@ -19,9 +19,10 @@ export default function TextReveal({
   staggerChildren = 0.1,
   type = "words"
 }: TextRevealProps) {
+  const text = typeof children === 'string' ? children : String(children);
   const textRef = useRef<HTMLDivElement>(null);
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -33,7 +34,7 @@ export default function TextReveal({
     }
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { 
       y: 30,
       opacity: 0,
@@ -84,7 +85,7 @@ export default function TextReveal({
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
       >
-        {splitText(children, type)}
+        {splitText(text, type)}
       </motion.div>
     </div>
   );

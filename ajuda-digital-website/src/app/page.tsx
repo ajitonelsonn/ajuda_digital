@@ -14,31 +14,28 @@ import Image from "next/image";
 import { useState } from "react";
 import TextReveal from "@/components/animations/TextReveal";
 import LoadingScreen from "@/components/animations/LoadingScreen";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const features = [
+const getFeatures = (t: (key: string) => string) => [
   {
     icon: MessageCircle,
-    title: "10 Specialized AI Assistants",
-    description:
-      "Department-specific chatbots for Civil Registry, Immigration, Education, Business, and more.",
+    title: t("features.specializedAssistants.title"),
+    description: t("features.specializedAssistants.description"),
   },
   {
     icon: Globe,
-    title: "Multilingual Support",
-    description:
-      "Communicate in English, Portuguese, Tetum, and other languages.",
+    title: t("features.multilingualSupport.title"),
+    description: t("features.multilingualSupport.description"),
   },
   {
     icon: Zap,
-    title: "Instant Responses",
-    description:
-      "Get immediate answers about required documents and procedures, eliminating office visits.",
+    title: t("features.instantResponses.title"),
+    description: t("features.instantResponses.description"),
   },
   {
     icon: Database,
-    title: "Comprehensive Database",
-    description:
-      "Access to complete government procedures, laws, and documentation requirements.",
+    title: t("features.comprehensiveDatabase.title"),
+    description: t("features.comprehensiveDatabase.description"),
   },
 ];
 
@@ -73,6 +70,8 @@ const technologies = [
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
+  const { t } = useLanguage();
+  const features = getFeatures(t);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -112,23 +111,21 @@ export default function HomePage() {
           >
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
               <TextReveal className="bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent">
-                Ajuda Digital
+                {t("hero.title")}
               </TextReveal>
             </h1>
             <TextReveal
               className="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto block"
               delay={0.2}
             >
-              Homegrown Government Chatbot by Timorese Youth
+              {t("hero.subtitle")}
             </TextReveal>
             <TextReveal
               className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto block"
               delay={0.4}
               staggerChildren={0.05}
             >
-              Empowering citizens with instant access to government services
-              through AI. Ask questions in your native language and get complete
-              information about documents, procedures, and requirements.
+              {t("hero.description")}
             </TextReveal>
 
             <motion.div
@@ -147,7 +144,7 @@ export default function HomePage() {
                 >
                   <MessageCircle size={20} />
                 </motion.div>
-                <span>Try Ajuda Digital</span>
+                <span>{t("hero.tryAjudaDigital")}</span>
                 <motion.div
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -165,7 +162,7 @@ export default function HomePage() {
                 >
                   <Users size={20} />
                 </motion.div>
-                <span>Meet the Team</span>
+                <span>{t("hero.meetTheTeam")}</span>
               </Link>
             </motion.div>
           </motion.div>
@@ -182,41 +179,35 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <TextReveal className="text-4xl font-bold text-gray-900 mb-6">
-              🚧 The Challenge We're Solving
+              🚧 {t("challenges.title")}
             </TextReveal>
             <div className="max-w-4xl mx-auto">
               <p className="text-lg text-gray-600 mb-8">
-                Citizens struggle with complex government services across
-                multiple departments—from business registration to understanding
-                constitutional rights, obtaining birth certificates, and
-                establishing companies.
+                {t("challenges.description")}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-red-50 p-6 rounded-lg">
                   <h3 className="text-xl font-semibold text-red-700 mb-3">
-                    🌐 Scattered Information
+                    🌐 {t("challenges.scatteredInfo.title")}
                   </h3>
                   <p className="text-gray-600">
-                    Information exists mainly in Portuguese on complicated
-                    government websites
+                    {t("challenges.scatteredInfo.description")}
                   </p>
                 </div>
                 <div className="bg-yellow-50 p-6 rounded-lg">
                   <h3 className="text-xl font-semibold text-yellow-700 mb-3">
-                    🏢 Office Visits Required
+                    🏢 {t("challenges.officeVisits.title")}
                   </h3>
                   <p className="text-gray-600">
-                    Citizens must visit offices to read information boards or
-                    ask family for help
+                    {t("challenges.officeVisits.description")}
                   </p>
                 </div>
                 <div className="bg-red-50 p-6 rounded-lg">
                   <h3 className="text-xl font-semibold text-red-700 mb-3">
-                    ❌ Document Rejections
+                    ❌ {t("challenges.documentRejections.title")}
                   </h3>
                   <p className="text-gray-600">
-                    Wrong information leads to rejections when citizens arrive
-                    without proper documents
+                    {t("challenges.documentRejections.description")}
                   </p>
                 </div>
               </div>
@@ -235,12 +226,10 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <TextReveal className="text-4xl font-bold text-gray-900 mb-6">
-              How Ajuda Digital Helps
+              {t("features.title")}
             </TextReveal>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our AI-powered platform provides instant, accurate information
-              about government services in the languages Timorese citizens
-              speak.
+              {t("features.description")}
             </p>
           </motion.div>
 
@@ -276,11 +265,10 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <TextReveal className="text-4xl font-bold text-gray-900 mb-6">
-              Powered by Advanced Technology
+              {t("technology.title")}
             </TextReveal>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-              Built with cutting-edge AI models and enterprise-grade
-              infrastructure to serve Timor-Leste's digital government needs.
+              {t("technology.description")}
             </p>
           </motion.div>
 
@@ -327,7 +315,7 @@ export default function HomePage() {
               className="inline-flex items-center space-x-2 text-red-600 hover:text-red-700 font-medium"
             >
               <Database size={20} />
-              <span>Explore Our Datasets</span>
+              <span>{t("technology.exploreDatasets")}</span>
               <ArrowRight size={16} />
             </Link>
           </motion.div>
@@ -343,11 +331,10 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
           >
             <TextReveal className="text-4xl font-bold text-white mb-6">
-              Ready to Experience the Future of Government Services?
+              {t("cta.title")}
             </TextReveal>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Join Us to use Ajuda Digital to access government information
-              instantly and accurately.
+              {t("cta.description")}
             </p>
             <motion.div
               whileHover={{ scale: 1.05, y: -2 }}
@@ -364,7 +351,7 @@ export default function HomePage() {
                 >
                   <MessageCircle size={20} />
                 </motion.div>
-                <span>Start Chatting Now</span>
+                <span>{t("cta.startChatting")}</span>
                 <motion.div
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}

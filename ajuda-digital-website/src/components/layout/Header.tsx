@@ -3,14 +3,17 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import LanguageSelector from "../LanguageSelector";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Team", href: "/team" },
-    { name: "Datasets", href: "/datasets" },
+    { name: t("header.home"), href: "/" },
+    { name: t("header.team"), href: "/team" },
+    { name: t("header.datasets"), href: "/datasets" },
   ];
 
   return (
@@ -34,7 +37,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -44,11 +47,12 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
+            <LanguageSelector />
             <Link
               href="https://chat.ajuda-digital.com"
               className="bg-gradient-to-r from-red-600 to-yellow-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-200"
             >
-              Try Demo
+              {t("header.tryDemo")}
             </Link>
           </div>
 
@@ -77,12 +81,15 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+              <div className="px-3 py-2">
+                <LanguageSelector />
+              </div>
               <Link
                 href="https://chat.ajuda-digital.com"
                 className="block px-3 py-2 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-md text-center mt-4"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Try Demo
+                {t("header.tryDemo")}
               </Link>
             </div>
           </div>
