@@ -1,13 +1,20 @@
 "use client";
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set, get, child, push, serverTimestamp } from 'firebase/database';
+import { initializeApp, type FirebaseApp } from 'firebase/app';
+import { getDatabase, ref, set, get, child, serverTimestamp, type Database } from 'firebase/database';
 import { firebaseConfig, isFirebaseConfigured } from './firebase-config';
 import type { VisitorData } from './visitorTracking';
 
+interface CountryData {
+  name: string;
+  flag: string;
+  count: number;
+}
+
+
 class FirebaseService {
   private static instance: FirebaseService;
-  private app: any = null;
-  private database: any = null;
+  private app: FirebaseApp | null = null;
+  private database: Database | null = null;
   private isConfigured: boolean = false;
 
   private constructor() {
@@ -44,6 +51,13 @@ class FirebaseService {
     return this.isConfigured && this.database !== null;
   }
 
+  private getDatabase(): Database {
+    if (!this.database) {
+      throw new Error('Firebase database not initialized');
+    }
+    return this.database;
+  }
+
   // Save visitor data to Firebase
   public async saveVisitorData(data: VisitorData): Promise<boolean> {
     if (!this.isReady()) {
@@ -51,7 +65,7 @@ class FirebaseService {
     }
 
     try {
-      const dbRef = ref(this.database);
+      const dbRef = ref(this.getDatabase());
       
       // Prepare data for Firebase (convert arrays to objects)
       const firebaseData = {
@@ -86,7 +100,7 @@ class FirebaseService {
     }
 
     try {
-      const dbRef = ref(this.database);
+      const dbRef = ref(this.getDatabase());
       const snapshot = await get(child(dbRef, 'visitor_data'));
 
       if (snapshot.exists()) {
@@ -119,7 +133,7 @@ class FirebaseService {
     }
 
     try {
-      const dbRef = ref(this.database);
+      const dbRef = ref(this.getDatabase());
       const snapshot = await get(child(dbRef, 'visitor_data/totalVisitors'));
       return snapshot.val() || 0;
     } catch (error) {
@@ -135,7 +149,7 @@ class FirebaseService {
     }
 
     try {
-      const dbRef = ref(this.database);
+      const dbRef = ref(this.getDatabase());
       const snapshot = await get(child(dbRef, 'daily_stats'));
 
       if (snapshot.exists()) {
@@ -161,11 +175,11 @@ class FirebaseService {
     }
 
     try {
-      const dbRef = ref(this.database);
+      const dbRef = ref(this.getDatabase());
       
       // Get current data
       const snapshot = await get(child(dbRef, 'visitor_data'));
-      let currentData = snapshot.val() || {
+      const currentData = snapshot.val() || {
         totalVisitors: 0,
         countries: {},
         lastUpdated: null
@@ -205,8 +219,8 @@ class FirebaseService {
   }
 
   // Utility methods for data conversion
-  private convertCountriesArrayToObject(countries: any[]): Record<string, any> {
-    const result: Record<string, any> = {};
+  private convertCountriesArrayToObject(countries: Array<{code: string; name: string; flag: string; count: number}>): Record<string, CountryData> {
+    const result: Record<string, CountryData> = {};
     countries.forEach(country => {
       result[country.code] = {
         name: country.name,
@@ -217,8 +231,8 @@ class FirebaseService {
     return result;
   }
 
-  private convertCountriesObjectToArray(countries: Record<string, any>): any[] {
-    return Object.entries(countries).map(([code, data]: [string, any]) => ({
+  private convertCountriesObjectToArray(countries: Record<string, CountryData>): Array<{code: string; name: string; flag: string; count: number}> {
+    return Object.entries(countries).map(([code, data]) => ({
       code,
       name: data.name,
       flag: data.flag,
@@ -226,7 +240,7 @@ class FirebaseService {
     })).sort((a, b) => b.count - a.count);
   }
 
-  private convertDailyVisitsArrayToObject(dailyVisits: any[]): Record<string, number> {
+  private convertDailyVisitsArrayToObject(dailyVisits: Array<{date: string; count: number}>): Record<string, number> {
     const result: Record<string, number> = {};
     dailyVisits.forEach(day => {
       result[day.date] = day.count;
@@ -234,7 +248,7 @@ class FirebaseService {
     return result;
   }
 
-  private convertDailyVisitsObjectToArray(dailyVisits: Record<string, number>): any[] {
+  private convertDailyVisitsObjectToArray(dailyVisits: Record<string, number>): Array<{date: string; count: number}> {
     return Object.entries(dailyVisits)
       .map(([date, count]) => ({ date, count }))
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())

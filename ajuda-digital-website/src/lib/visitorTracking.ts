@@ -19,12 +19,27 @@ export interface GeoLocation {
   query: string; // IP address
 }
 
+interface GeoApiResponse {
+  country?: string;
+  countryCode?: string;
+  country_name?: string;
+  country_code?: string;
+  query?: string;
+  ip?: string;
+}
+
+interface GeoApiConfig {
+  name: string;
+  url: string;
+  transform: (data: GeoApiResponse) => GeoLocation;
+}
+
 // Multiple free APIs for geolocation (fallback chain)
-const GEOLOCATION_APIS = [
+const GEOLOCATION_APIS: GeoApiConfig[] = [
   {
     name: 'ip-api.com',
     url: 'http://ip-api.com/json/',
-    transform: (data: any) => ({
+    transform: (data: GeoApiResponse) => ({
       country: data.country || 'Unknown',
       countryCode: data.countryCode || 'XX',
       query: data.query || ''
@@ -33,7 +48,7 @@ const GEOLOCATION_APIS = [
   {
     name: 'ipapi.co',
     url: 'https://ipapi.co/json/',
-    transform: (data: any) => ({
+    transform: (data: GeoApiResponse) => ({
       country: data.country_name || 'Unknown',
       countryCode: data.country_code || 'XX', 
       query: data.ip || ''
@@ -42,7 +57,7 @@ const GEOLOCATION_APIS = [
   {
     name: 'ip.sb',
     url: 'https://api.ip.sb/geoip',
-    transform: (data: any) => ({
+    transform: (data: GeoApiResponse) => ({
       country: data.country || 'Unknown',
       countryCode: data.country_code || 'XX',
       query: data.ip || ''
