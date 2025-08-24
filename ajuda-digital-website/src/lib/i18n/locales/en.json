@@ -50,7 +50,8 @@
   },
   "technology": {
     "title": "Powered by Advanced Technology",
-    "description": "Built with cutting-edge AI models and enterprise-grade infrastructure to serve Timor-Leste's digital government needs."
+    "description": "Built with cutting-edge AI models and enterprise-grade infrastructure to serve Timor-Leste's digital government needs.",
+    "exploreDatasets": "Explore Our Datasets"
   },
   "cta": {
     "title": "Ready to Experience the Future of Government Services?",
@@ -63,6 +64,7 @@
     "quickLinks": "Quick Links",
     "connect": "Connect",
     "contactUs": "Contact Us",
+    "github": "GitHub",
     "copyright": "© 2025 Ajuda Digital. Built with ❤️ in Timor-Leste.",
     "poweredBy": "Powered by SEA-LION AI Model"
   }

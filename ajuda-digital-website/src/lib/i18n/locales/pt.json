@@ -50,7 +50,8 @@
   },
   "technology": {
     "title": "Alimentado por Tecnologia Avançada",
-    "description": "Construído com modelos de IA de ponta e infraestrutura de nível empresarial para atender às necessidades do governo digital de Timor-Leste."
+    "description": "Construído com modelos de IA de ponta e infraestrutura de nível empresarial para atender às necessidades do governo digital de Timor-Leste.",
+    "exploreDatasets": "Explore Nossos Conjuntos de Dados"
   },
   "cta": {
     "title": "Pronto para Experimentar o Futuro dos Serviços Governamentais?",
@@ -63,6 +64,7 @@
     "quickLinks": "Links Rápidos",
     "connect": "Conectar",
     "contactUs": "Contate-nos",
+    "github": "GitHub",
     "copyright": "© 2025 Ajuda Digital. Construído com ❤️ em Timor-Leste.",
     "poweredBy": "Alimentado pelo Modelo de IA SEA-LION"
   }

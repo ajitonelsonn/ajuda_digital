@@ -50,7 +50,8 @@
   },
   "technology": {
     "title": "Ho Teknolojia Avansadu",
-    "description": "Harii ho modelu AI ne'ebé foun no infraestrutura nivel empresa nian atu serve Timor-Leste nia presiza governu dijital."
+    "description": "Harii ho modelu AI ne'ebé foun no infraestrutura nivel empresa nian atu serve Timor-Leste nia presiza governu dijital.",
+    "exploreDatasets": "Explora Ami nia Dadus sira"
   },
   "cta": {
     "title": "Prontu atu Esperiensia Futuru Servisu Governu nian?",
@@ -63,6 +64,7 @@
     "quickLinks": "Link Lalais",
     "connect": "Konekta",
     "contactUs": "Kontaktu Ami",
+    "github": "GitHub",
     "copyright": "© 2025 Ajuda Digital. Harii ho ❤️ iha Timor-Leste.",
     "poweredBy": "Ho Podér husi Modelu AI SEA-LION"
   }
