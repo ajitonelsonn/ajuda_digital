@@ -2,104 +2,45 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Users, Globe } from "lucide-react";
-
-interface VisitorData {
-  totalVisitors: number;
-  countries: {
-    code: string;
-    name: string;
-    flag: string;
-    count: number;
-  }[];
-}
+import { VisitorTracker, type VisitorData } from "@/lib/visitorTracking";
 
 export default function VisitorCounter() {
   const [visitorData, setVisitorData] = useState<VisitorData>({
     totalVisitors: 0,
-    countries: []
+    countries: [],
+    dailyVisits: [],
+    lastUpdated: ''
   });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Get visitor's location and update counter
-    const trackVisitor = async () => {
+    const initializeTracking = async () => {
       try {
-        // Get visitor's country from IP geolocation
-        const geoResponse = await fetch('https://ipapi.co/json/');
-        const geoData = await geoResponse.json();
+        const tracker = VisitorTracker.getInstance();
         
-        const countryCode = geoData.country_code || 'TL';
-        const countryName = geoData.country_name || 'Timor-Leste';
-        const countryFlag = getCountryFlag(countryCode);
-
-        // Load existing data from localStorage
-        const existingData = localStorage.getItem('ajuda-digital-visitors');
-        let currentData: VisitorData = {
-          totalVisitors: 1,
-          countries: [{ code: countryCode, name: countryName, flag: countryFlag, count: 1 }]
-        };
-
-        if (existingData) {
-          currentData = JSON.parse(existingData);
-          
-          // Update total visitors
-          currentData.totalVisitors += 1;
-          
-          // Update or add country
-          const existingCountry = currentData.countries.find(c => c.code === countryCode);
-          if (existingCountry) {
-            existingCountry.count += 1;
-          } else {
-            currentData.countries.push({
-              code: countryCode,
-              name: countryName,
-              flag: countryFlag,
-              count: 1
-            });
-          }
-        }
-
-        // Sort countries by count (descending)
-        currentData.countries.sort((a, b) => b.count - a.count);
-        
-        // Keep only top 10 countries
-        currentData.countries = currentData.countries.slice(0, 10);
-
-        // Save to localStorage
-        localStorage.setItem('ajuda-digital-visitors', JSON.stringify(currentData));
-        
-        setVisitorData(currentData);
+        // Load existing data first (instant display)
+        const existingData = tracker.getData();
+        setVisitorData(existingData);
         setLoading(false);
-      } catch (error) {
-        console.error('Failed to track visitor:', error);
+
+        // Try to load from Firebase (if configured)
+        await tracker.loadFromFirebase();
+
+        // Try to load from external API (if available)
+        await tracker.loadFromExternalAPI();
+
+        // Track current visitor
+        const updatedData = await tracker.trackVisitor();
+        setVisitorData(updatedData);
         
-        // Fallback to existing data or default
-        const existingData = localStorage.getItem('ajuda-digital-visitors');
-        if (existingData) {
-          setVisitorData(JSON.parse(existingData));
-        } else {
-          // Default data with Timor-Leste
-          setVisitorData({
-            totalVisitors: 1,
-            countries: [{ code: 'TL', name: 'Timor-Leste', flag: '🇹🇱', count: 1 }]
-          });
-        }
+      } catch (error) {
+        console.error('Failed to initialize visitor tracking:', error);
         setLoading(false);
       }
     };
 
-    trackVisitor();
+    initializeTracking();
   }, []);
-
-  const getCountryFlag = (countryCode: string): string => {
-    const flagMap: Record<string, string> = {
-      'TL': '🇹🇱', 'US': '🇺🇸', 'ID': '🇮🇩', 'AU': '🇦🇺', 'PT': '🇵🇹',
-      'BR': '🇧🇷', 'SG': '🇸🇬', 'MY': '🇲🇾', 'JP': '🇯🇵', 'KR': '🇰🇷',
-      'CN': '🇨🇳', 'IN': '🇮🇳', 'GB': '🇬🇧', 'DE': '🇩🇪', 'FR': '🇫🇷',
-      'NL': '🇳🇱', 'CA': '🇨🇦', 'PH': '🇵🇭', 'TH': '🇹🇭', 'VN': '🇻🇳'
-    };
-    return flagMap[countryCode] || '🌍';
-  };
 
   if (loading) {
     return (
