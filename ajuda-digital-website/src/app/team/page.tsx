@@ -323,7 +323,7 @@ export default function TeamPage() {
               Timor-Leste.
             </p>
             <a
-              href="mailto:team@ajuda-digital.com"
+              href="mailto:cs.ajuda.digital@gmail.com"
               className="bg-white text-red-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition-colors inline-flex items-center space-x-2"
             >
               <Mail size={20} />

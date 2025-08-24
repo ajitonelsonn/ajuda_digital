@@ -79,7 +79,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="mailto:team@ajuda-digital.com"
+                  href="mailto:cs.ajuda.digital@gmail.com"
                   className="text-gray-400 hover:text-white transition-colors flex items-center space-x-2"
                 >
                   <Mail size={16} />
