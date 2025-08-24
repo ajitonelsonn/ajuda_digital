@@ -1,9 +1,10 @@
 "use client";
 import { motion, Variants } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
+import React from "react";
 
 interface TextRevealProps {
-  children: string;
+  children: React.ReactNode;
   className?: string;
   delay?: number;
   duration?: number;
@@ -19,7 +20,13 @@ export default function TextReveal({
   staggerChildren = 0.1,
   type = "words"
 }: TextRevealProps) {
-  const text = typeof children === 'string' ? children : String(children);
+  const text = typeof children === 'string' ? children : 
+    React.Children.toArray(children).map(child => 
+      typeof child === 'string' ? child : 
+      typeof child === 'number' ? String(child) :
+      React.isValidElement(child) && (child.props as { children?: React.ReactNode }).children ? 
+        String((child.props as { children?: React.ReactNode }).children) : ''
+    ).join('');
   const textRef = useRef<HTMLDivElement>(null);
 
   const container: Variants = {

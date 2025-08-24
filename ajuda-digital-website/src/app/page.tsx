@@ -5,7 +5,6 @@ import {
   MessageCircle,
   Users,
   Database,
-  Cpu,
   Globe,
   Zap,
 } from "lucide-react";

@@ -30,7 +30,7 @@ const teamMembers: TeamMember[] = [
     role: "Team Leader",
     bio: "Big Data Engineer at Viettel Timor and passionate about Artificial Intelligence and Machine Learning.",
     image: "/images/team-member-1.jpg",
-    skills: ["Python", "TypeScript", "AI/ML", "AWS"],
+    skills: ["Check : www.ajitonelson.com"],
     social: {
       github: "https://github.com/ajitonelsonn",
       linkedin: "https://linkedin.com/in/ajitonelson",
@@ -168,14 +168,33 @@ export default function TeamPage() {
 
                   {/* Skills */}
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {member.skills.map((skill, skillIndex) => (
-                      <span
-                        key={skillIndex}
-                        className="px-2 py-1 bg-red-50 text-red-600 text-xs rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                    {member.skills.map((skill, skillIndex) => {
+                      // Check if skill is a website link
+                      if (skill.includes("www.") || skill.includes("http")) {
+                        const url = skill.includes("Check : ") ? skill.replace("Check : ", "") : skill;
+                        const displayText = skill.includes("Check : ") ? skill : `Visit ${url}`;
+                        return (
+                          <a
+                            key={skillIndex}
+                            href={url.startsWith("http") ? url : `https://${url}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-2 py-1 bg-red-50 text-red-600 text-xs rounded-full hover:bg-red-100 transition-colors cursor-pointer"
+                          >
+                            {displayText}
+                          </a>
+                        );
+                      }
+                      // Regular skill
+                      return (
+                        <span
+                          key={skillIndex}
+                          className="px-2 py-1 bg-red-50 text-red-600 text-xs rounded-full"
+                        >
+                          {skill}
+                        </span>
+                      );
+                    })}
                   </div>
 
                   {/* Social Links */}
@@ -269,13 +288,13 @@ export default function TeamPage() {
               Our Mission
             </h2>
             <blockquote className="text-2xl text-gray-700 font-light leading-relaxed mb-8">
-              "We believe that every Timorese citizen deserves easy access to
-              government services in their own language. Technology should
-              bridge gaps, not create them."
+              &ldquo;We believe that every Timorese citizen deserves easy access
+              to government services in their own language. Technology should
+              bridge gaps, not create them.&rdquo;
             </blockquote>
             <div className="bg-gradient-to-r from-red-50 to-yellow-50 p-8 rounded-xl border border-red-100">
               <p className="text-lg text-gray-700 leading-relaxed">
-                As young developers from Timor-Leste, we've experienced
+                As young developers from Timor-Leste, we&apos;ve experienced
                 firsthand the challenges of navigating government services. Our
                 goal is to use cutting-edge AI technology, specifically the
                 SEA-LION model designed for Southeast Asia, to create solutions
@@ -299,8 +318,9 @@ export default function TeamPage() {
               Want to Collaborate?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              We're always open to collaboration, feedback, and partnerships
-              that can help improve government services in Timor-Leste.
+              We&apos;re always open to collaboration, feedback, and
+              partnerships that can help improve government services in
+              Timor-Leste.
             </p>
             <a
               href="mailto:team@ajuda-digital.com"

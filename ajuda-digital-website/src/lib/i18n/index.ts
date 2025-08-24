@@ -22,16 +22,16 @@ export function getTranslations(language: Language) {
 }
 
 export function getNestedTranslation(
-  translations: any,
+  translations: Record<string, unknown>,
   key: string,
   fallback?: string
 ): string {
   const keys = key.split('.');
-  let result = translations;
+  let result: unknown = translations;
   
   for (const k of keys) {
-    if (result && typeof result === 'object' && k in result) {
-      result = result[k];
+    if (result && typeof result === 'object' && result !== null && k in result) {
+      result = (result as Record<string, unknown>)[k];
     } else {
       return fallback || key;
     }
