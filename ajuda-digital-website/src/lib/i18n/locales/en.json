@@ -1,0 +1,69 @@
+{
+  "header": {
+    "home": "Home",
+    "team": "Team", 
+    "datasets": "Datasets",
+    "tryDemo": "Try Demo"
+  },
+  "hero": {
+    "title": "Ajuda Digital",
+    "subtitle": "Homegrown Government Chatbot by Timorese Youth",
+    "description": "Empowering citizens with instant access to government services through AI. Ask questions in your native language and get complete information about documents, procedures, and requirements.",
+    "tryAjudaDigital": "Try Ajuda Digital",
+    "meetTheTeam": "Meet the Team"
+  },
+  "challenges": {
+    "title": "The Challenge We're Solving",
+    "description": "Citizens struggle with complex government services across multiple departments—from business registration to understanding constitutional rights, obtaining birth certificates, and establishing companies.",
+    "scatteredInfo": {
+      "title": "Scattered Information",
+      "description": "Information exists mainly in Portuguese on complicated government websites"
+    },
+    "officeVisits": {
+      "title": "Office Visits Required", 
+      "description": "Citizens must visit offices to read information boards or ask family for help"
+    },
+    "documentRejections": {
+      "title": "Document Rejections",
+      "description": "Wrong information leads to rejections when citizens arrive without proper documents"
+    }
+  },
+  "features": {
+    "title": "How Ajuda Digital Helps",
+    "description": "Our AI-powered platform provides instant, accurate information about government services in the languages Timorese citizens speak.",
+    "specializedAssistants": {
+      "title": "10 Specialized AI Assistants",
+      "description": "Department-specific chatbots for Civil Registry, Immigration, Education, Business, and more."
+    },
+    "multilingualSupport": {
+      "title": "Multilingual Support", 
+      "description": "Communicate in English, Portuguese, Tetum, and other languages."
+    },
+    "instantResponses": {
+      "title": "Instant Responses",
+      "description": "Get immediate answers about required documents and procedures, eliminating office visits."
+    },
+    "comprehensiveDatabase": {
+      "title": "Comprehensive Database",
+      "description": "Access to complete government procedures, laws, and documentation requirements."
+    }
+  },
+  "technology": {
+    "title": "Powered by Advanced Technology",
+    "description": "Built with cutting-edge AI models and enterprise-grade infrastructure to serve Timor-Leste's digital government needs."
+  },
+  "cta": {
+    "title": "Ready to Experience the Future of Government Services?",
+    "description": "Join Us to use Ajuda Digital to access government information instantly and accurately.",
+    "startChatting": "Start Chatting Now"
+  },
+  "footer": {
+    "description": "Empowering Timorese citizens with AI-powered government service assistance. Built by young developers for their country.",
+    "madeInTimorLeste": "Made in Timor-Leste",
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "contactUs": "Contact Us",
+    "copyright": "© 2025 Ajuda Digital. Built with ❤️ in Timor-Leste.",
+    "poweredBy": "Powered by SEA-LION AI Model"
+  }
+}

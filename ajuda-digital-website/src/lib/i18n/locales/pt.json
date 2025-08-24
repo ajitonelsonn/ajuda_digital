@@ -1,0 +1,69 @@
+{
+  "header": {
+    "home": "Início",
+    "team": "Equipe", 
+    "datasets": "Conjuntos de Dados",
+    "tryDemo": "Experimente"
+  },
+  "hero": {
+    "title": "Ajuda Digital",
+    "subtitle": "Chatbot Governamental Criado por Jovens Timorenses",
+    "description": "Capacitando cidadãos com acesso instantâneo aos serviços governamentais através de IA. Faça perguntas na sua língua nativa e obtenha informações completas sobre documentos, procedimentos e requisitos.",
+    "tryAjudaDigital": "Experimente Ajuda Digital",
+    "meetTheTeam": "Conheça a Equipe"
+  },
+  "challenges": {
+    "title": "O Desafio que Estamos Resolvendo",
+    "description": "Os cidadãos enfrentam dificuldades com serviços governamentais complexos em vários departamentos—desde registro de empresas até compreensão de direitos constitucionais, obtenção de certidões de nascimento e estabelecimento de empresas.",
+    "scatteredInfo": {
+      "title": "Informação Dispersa",
+      "description": "As informações existem principalmente em português em sites governamentais complicados"
+    },
+    "officeVisits": {
+      "title": "Visitas ao Escritório Necessárias", 
+      "description": "Os cidadãos devem visitar escritórios para ler quadros de informações ou pedir ajuda à família"
+    },
+    "documentRejections": {
+      "title": "Rejeição de Documentos",
+      "description": "Informações erradas levam a rejeições quando os cidadãos chegam sem os documentos adequados"
+    }
+  },
+  "features": {
+    "title": "Como a Ajuda Digital Ajuda",
+    "description": "Nossa plataforma alimentada por IA fornece informações instantâneas e precisas sobre serviços governamentais nas línguas que os cidadãos timorenses falam.",
+    "specializedAssistants": {
+      "title": "10 Assistentes de IA Especializados",
+      "description": "Chatbots específicos por departamento para Registro Civil, Imigração, Educação, Negócios e muito mais."
+    },
+    "multilingualSupport": {
+      "title": "Suporte Multilíngue", 
+      "description": "Comunique-se em inglês, português, tetum e outras línguas."
+    },
+    "instantResponses": {
+      "title": "Respostas Instantâneas",
+      "description": "Obtenha respostas imediatas sobre documentos necessários e procedimentos, eliminando visitas ao escritório."
+    },
+    "comprehensiveDatabase": {
+      "title": "Base de Dados Abrangente",
+      "description": "Acesso a procedimentos governamentais completos, leis e requisitos de documentação."
+    }
+  },
+  "technology": {
+    "title": "Alimentado por Tecnologia Avançada",
+    "description": "Construído com modelos de IA de ponta e infraestrutura de nível empresarial para atender às necessidades do governo digital de Timor-Leste."
+  },
+  "cta": {
+    "title": "Pronto para Experimentar o Futuro dos Serviços Governamentais?",
+    "description": "Junte-se a nós para usar a Ajuda Digital para acessar informações governamentais instantaneamente e com precisão.",
+    "startChatting": "Comece a Conversar Agora"
+  },
+  "footer": {
+    "description": "Capacitando cidadãos timorenses com assistência de serviços governamentais alimentada por IA. Construído por jovens desenvolvedores para o seu país.",
+    "madeInTimorLeste": "Feito em Timor-Leste",
+    "quickLinks": "Links Rápidos",
+    "connect": "Conectar",
+    "contactUs": "Contate-nos",
+    "copyright": "© 2025 Ajuda Digital. Construído com ❤️ em Timor-Leste.",
+    "poweredBy": "Alimentado pelo Modelo de IA SEA-LION"
+  }
+}

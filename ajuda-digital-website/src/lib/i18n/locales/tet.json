@@ -1,0 +1,69 @@
+{
+  "header": {
+    "home": "Uma",
+    "team": "Ekipa", 
+    "datasets": "Dadus sira",
+    "tryDemo": "Tenta"
+  },
+  "hero": {
+    "title": "Ajuda Digital",
+    "subtitle": "Chatbot Governu nian ne'ebé Jovens Timor oan sira halo",
+    "description": "Fo forsa ba sidadaun sira atu hetan asesu ba servisu governu nian ho AI. Husu pergunta sira iha ita nia lian rasik no hetan informasaun tomak kona-ba dokumentu, prosedimentu no presiza sira.",
+    "tryAjudaDigital": "Tenta Ajuda Digital",
+    "meetTheTeam": "Koñese Ekipa"
+  },
+  "challenges": {
+    "title": "Desafiu ne'ebé Ami Rezolve",
+    "description": "Sidadaun sira hasoru difikuldade ho servisu governu nian ne'ebé kompleksu iha departamentu barak—husi rejistru negosiu to'o komprende direitu konstitusional, hetan sertidaun moris no estabelese empresa sira.",
+    "scatteredInfo": {
+      "title": "Informasaun ne'ebé Nakonu",
+      "description": "Informasaun eziste liu-liu iha lian portugues iha website governu nian ne'ebé kompleksu"
+    },
+    "officeVisits": {
+      "title": "Presiza ba Vizita Eskritóriu", 
+      "description": "Sidadaun sira tenke ba eskritóriu atu lee quadru informasaun ka husu ajuda ba familia"
+    },
+    "documentRejections": {
+      "title": "Rejeisaun Dokumentu",
+      "description": "Informasaun sala lori ba rejeisaun bainhira sidadaun sira to'o la ho dokumentu ne'ebé diak"
+    }
+  },
+  "features": {
+    "title": "Oinsá Ajuda Digital Ajuda",
+    "description": "Ami nia plataforma ho AI fornese informasaun ne'ebé lais no loos kona-ba servisu governu nian iha lian sira ne'ebé sidadaun Timor oan sira koalia.",
+    "specializedAssistants": {
+      "title": "10 Assistente AI Espesializadu",
+      "description": "Chatbot espesifiku ba departamentu ba Rejistru Sivil, Imigrasaun, Edukasaun, Negosiu, no seluk tan."
+    },
+    "multilingualSupport": {
+      "title": "Suporte Lian Barak", 
+      "description": "Komunika iha lian inglés, portugués, tetun, no lian seluk."
+    },
+    "instantResponses": {
+      "title": "Resposta Lalais",
+      "description": "Hetan resposta lalais kona-ba dokumentu presiza no prosedimentu, hasai presiza ba vizita eskritóriu."
+    },
+    "comprehensiveDatabase": {
+      "title": "Dadus Kompletu",
+      "description": "Asesu ba prosedimentu governu nian tomak, lei sira no presiza dokumentasaun."
+    }
+  },
+  "technology": {
+    "title": "Ho Teknolojia Avansadu",
+    "description": "Harii ho modelu AI ne'ebé foun no infraestrutura nivel empresa nian atu serve Timor-Leste nia presiza governu dijital."
+  },
+  "cta": {
+    "title": "Prontu atu Esperiensia Futuru Servisu Governu nian?",
+    "description": "Partisipa ho ami atu uza Ajuda Digital atu asesu informasaun governu nian ho lais no loos.",
+    "startChatting": "Hahuu Koalia Agora"
+  },
+  "footer": {
+    "description": "Fo forsa ba sidadaun Timor oan sira ho asisténsia servisu governu nian ne'ebé AI suporta. Harii husi jovens programador sira ba sira nia rain.",
+    "madeInTimorLeste": "Halo iha Timor-Leste",
+    "quickLinks": "Link Lalais",
+    "connect": "Konekta",
+    "contactUs": "Kontaktu Ami",
+    "copyright": "© 2025 Ajuda Digital. Harii ho ❤️ iha Timor-Leste.",
+    "poweredBy": "Ho Podér husi Modelu AI SEA-LION"
+  }
+}
