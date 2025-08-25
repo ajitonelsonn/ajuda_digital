@@ -64,6 +64,12 @@ const technologies = [
     url: "https://openwebui.com/",
     logo: "/images/tech/openwebui.png",
   },
+  {
+    name: "AWS S3",
+    description: "Scalable cloud storage for datasets and documents",
+    url: "https://aws.amazon.com/s3/",
+    logo: "/images/tech/aws-s3.webp",
+  },
 ];
 
 export default function HomePage() {
@@ -335,7 +341,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
             {technologies.map((tech, index) => (
               <motion.a
                 key={index}
@@ -344,25 +350,48 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.08, y: -8 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-red-50 to-yellow-50 p-6 rounded-lg border border-red-100 hover:border-red-200 hover:shadow-lg transition-all duration-300 cursor-pointer block"
+                className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl border-0 transition-all duration-500 cursor-pointer block overflow-hidden"
               >
-                <div className="flex items-center space-x-3 mb-2">
-                  <div className="w-8 h-8 relative flex-shrink-0">
-                    <Image
-                      src={tech.logo}
-                      alt={`${tech.name} logo`}
-                      width={32}
-                      height={32}
-                      className="object-contain"
-                    />
+                {/* Background gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 via-transparent to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Logo container with enhanced styling */}
+                  <div className="flex justify-center mb-6">
+                    <div className="relative">
+                      <div className="w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+                        <Image
+                          src={tech.logo}
+                          alt={`${tech.name} logo`}
+                          width={40}
+                          height={40}
+                          className="object-contain group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                      {/* Glow ring */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-500 rounded-xl opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300" />
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-gray-900 text-center mb-3 group-hover:text-gray-800 transition-colors">
                     {tech.name}
                   </h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm text-center leading-relaxed group-hover:text-gray-700 transition-colors">
+                    {tech.description}
+                  </p>
+                  
+                  {/* Bottom accent */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <p className="text-gray-600 text-sm">{tech.description}</p>
               </motion.a>
             ))}
           </div>
