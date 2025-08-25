@@ -1,345 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ajuda Digital - Redirecting</title>
-    <meta http-equiv="refresh" content="30;url=https://chattest.ajuda-digital.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta
+      http-equiv="refresh"
+      content="30;url=https://chattest.ajuda-digital.com"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        background: linear-gradient(135deg, #eb2727 0%, #f8ec07 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        overflow: hidden;
+      }
+
+      .background-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background-image: radial-gradient(
+            circle at 25% 25%,
+            rgba(255, 255, 255, 0.2) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 75% 75%,
+            rgba(255, 255, 255, 0.2) 0%,
+            transparent 50%
+          );
+        animation: float 20s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
         }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
-            overflow: hidden;
+        50% {
+          transform: translateY(-20px) rotate(180deg);
         }
-        
-        .background-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.2) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.2) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
+      }
+
+      .container {
+        max-width: 500px;
+        width: 90%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 50px 40px;
+        border-radius: 24px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+          0 0 0 1px rgba(255, 255, 255, 0.2);
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        animation: slideUp 0.8s ease-out;
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
         }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 24px;
+        display: block;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        color: #6b7280;
+        margin-bottom: 32px;
+        font-weight: 400;
+      }
+
+      .status-message {
+        background: linear-gradient(135deg, #fef3c7, #fde68a);
+        border: 1px solid #f59e0b;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 32px;
+        font-size: 14px;
+        color: #92400e;
+        font-weight: 500;
+      }
+
+      .countdown-section {
+        margin: 32px 0;
+      }
+
+      .countdown-label {
+        font-size: 16px;
+        color: #6b7280;
+        margin-bottom: 16px;
+      }
+
+      .countdown {
+        font-size: 48px;
+        font-weight: 700;
+        color: #f59e0b;
+        margin: 16px 0;
+        text-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .countdown-unit {
+        font-size: 14px;
+        color: #9ca3af;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .redirect-btn {
+        background: linear-gradient(135deg, #eb2727, #f8ec07);
+        color: white;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 24px;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        font-family: inherit;
+      }
+
+      .redirect-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+      }
+
+      .redirect-btn:active {
+        transform: translateY(0);
+      }
+
+      .footer {
+        margin-top: 32px;
+        font-size: 12px;
+        color: #9ca3af;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 4px;
+        background: #e5e7eb;
+        border-radius: 2px;
+        margin: 24px 0;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #eb2727, #f8ec07);
+        border-radius: 2px;
+        transition: width 1s linear;
+      }
+
+      @media (max-width: 480px) {
         .container {
-            max-width: 500px;
-            width: 90%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 50px 40px;
-            border-radius: 24px;
-            box-shadow: 
-                0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                0 0 0 1px rgba(255, 255, 255, 0.2);
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            animation: slideUp 0.8s ease-out;
+          padding: 32px 24px;
+          margin: 20px;
         }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 24px;
-            display: block;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-        
-        .subtitle {
-            font-size: 16px;
-            color: #6b7280;
-            margin-bottom: 32px;
-            font-weight: 400;
-        }
-        
-        .status-message {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-            border: 1px solid #f59e0b;
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 32px;
-            font-size: 14px;
-            color: #92400e;
-            font-weight: 500;
-        }
-        
-        .countdown-section {
-            margin: 32px 0;
-        }
-        
-        .countdown-label {
-            font-size: 16px;
-            color: #6b7280;
-            margin-bottom: 16px;
-        }
-        
+
         .countdown {
-            font-size: 48px;
-            font-weight: 700;
-            color: #667eea;
-            margin: 16px 0;
-            text-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
-            animation: pulse 2s ease-in-out infinite;
+          font-size: 36px;
         }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+        h1 {
+          font-size: 24px;
         }
-        
-        .countdown-unit {
-            font-size: 14px;
-            color: #9ca3af;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .redirect-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 16px 32px;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 24px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-            font-family: inherit;
-        }
-        
-        .redirect-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
-        }
-        
-        .redirect-btn:active {
-            transform: translateY(0);
-        }
-        
-        .footer {
-            margin-top: 32px;
-            font-size: 12px;
-            color: #9ca3af;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-        }
-        
-        .progress-bar {
-            width: 100%;
-            height: 4px;
-            background: #e5e7eb;
-            border-radius: 2px;
-            margin: 24px 0;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
-            transition: width 1s linear;
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 32px 24px;
-                margin: 20px;
-            }
-            
-            .countdown {
-                font-size: 36px;
-            }
-            
-            h1 {
-                font-size: 24px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="background-pattern"></div>
-    
+
     <div class="container">
-        <img src="logo.png" alt="Ajuda Digital Logo" class="logo">
-        <h1>Ajuda Digital</h1>
-        <p class="subtitle">Digital empowerment for Timor-Leste 🇹🇱</p>
-        
-        <div class="status-message">
-            <strong>Development Notice:</strong> Our main chat service is currently being enhanced. You'll be redirected to our test environment.
+      <img src="logo.png" alt="Ajuda Digital Logo" class="logo" />
+      <h1>Ajuda Digital</h1>
+      <p class="subtitle">Homegrown Government Chatbot by Timorese Youth 🇹🇱</p>
+
+      <div class="status-message">
+        <strong>🚧 Development Notice:</strong> Our main chat service at <em>chat.ajuda-digital.com</em> is still in development. 
+        <br><br>
+        <strong>Try our demo version instead!</strong> You'll be automatically redirected to our fully functional test environment where you can experience all the features.
+      </div>
+
+      <div class="countdown-section">
+        <p class="countdown-label">Automatic redirect in:</p>
+        <div class="countdown" id="countdown">30</div>
+        <div class="countdown-unit">seconds</div>
+
+        <div class="progress-bar">
+          <div
+            class="progress-fill"
+            id="progressFill"
+            style="width: 100%"
+          ></div>
         </div>
-        
-        <div class="countdown-section">
-            <p class="countdown-label">Automatic redirect in:</p>
-            <div class="countdown" id="countdown">30</div>
-            <div class="countdown-unit">seconds</div>
-            
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill" style="width: 100%;"></div>
-            </div>
-        </div>
-        
-        <button class="redirect-btn" onclick="redirectNow()">
-            Access Test Environment Now →
-        </button>
-        
-        <div class="footer">
-            Made in Timor-Leste 🇹🇱 • Built by young developers
-        </div>
+      </div>
+
+      <button class="redirect-btn" onclick="redirectNow()">
+        Try Demo Version Now →
+      </button>
+
+      <div class="footer">Made in Timor-Leste 🇹🇱</div>
     </div>
 
     <script>
-        // Domain configuration - priority order
-        const domains = [
-            'https://chattest.ajuda-digital.com/',
-            'https://ajuda-digital-gnmbfktlza-uc.a.run.app/'
-        ];
-        
-        let timeLeft = 30;
-        let availableDomain = null;
-        let timer = null;
-        
-        const countdownElement = document.getElementById('countdown');
-        const progressFill = document.getElementById('progressFill');
-        const statusMessage = document.querySelector('.status-message');
-        const totalTime = 30;
-        
-        // Function to check if a domain is accessible
-        async function checkDomain(url) {
-            try {
-                // Use fetch with no-cors mode to avoid CORS issues
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
-                
-                const response = await fetch(url, {
-                    method: 'HEAD',
-                    mode: 'no-cors',
-                    signal: controller.signal
-                });
-                
-                clearTimeout(timeoutId);
-                return true; // If no error thrown, domain is accessible
-            } catch (error) {
-                return false;
-            }
+      // Domain configuration - priority order
+      const domains = [
+        "https://chattest.ajuda-digital.com/",
+        "https://ajuda-digital-gnmbfktlza-uc.a.run.app/",
+      ];
+
+      let timeLeft = 30;
+      let availableDomain = null;
+      let timer = null;
+
+      const countdownElement = document.getElementById("countdown");
+      const progressFill = document.getElementById("progressFill");
+      const statusMessage = document.querySelector(".status-message");
+      const totalTime = 30;
+
+      // Function to check if a domain is accessible
+      async function checkDomain(url) {
+        try {
+          // Use fetch with no-cors mode to avoid CORS issues
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+          const response = await fetch(url, {
+            method: "HEAD",
+            mode: "no-cors",
+            signal: controller.signal,
+          });
+
+          clearTimeout(timeoutId);
+          return true; // If no error thrown, domain is accessible
+        } catch (error) {
+          return false;
         }
-        
-        // Function to find the first available domain
-        async function findAvailableDomain() {
-            statusMessage.innerHTML = '<strong>Checking domains...</strong> Finding the best available service.';
-            
-            // Check domains in priority order
-            for (const domain of domains) {
-                const isAvailable = await checkDomain(domain);
-                if (isAvailable) {
-                    availableDomain = domain;
-                    statusMessage.innerHTML = `<strong>Service Found!</strong> Redirecting to ${domain.includes('chattest') ? 'primary test environment' : 'backup environment'}.`;
-                    return domain;
-                }
-            }
-            
-            // If no domains are available, default to the first one
-            availableDomain = domains[0];
-            statusMessage.innerHTML = '<strong>Using Default:</strong> Redirecting to primary environment (connectivity will be verified on arrival).';
-            return domains[0];
+      }
+
+      // Function to find the first available domain
+      async function findAvailableDomain() {
+        statusMessage.innerHTML =
+          "<strong>🚧 Development Notice:</strong> Our main chat service at <em>chat.ajuda-digital.com</em> is still in development.<br><br><strong>Checking demo environments...</strong> Finding the best available service for you to try.";
+
+        // Check domains in priority order
+        for (const domain of domains) {
+          const isAvailable = await checkDomain(domain);
+          if (isAvailable) {
+            availableDomain = domain;
+            statusMessage.innerHTML = `<strong>🚧 Development Notice:</strong> Our main chat service at <em>chat.ajuda-digital.com</em> is still in development.<br><br><strong>Demo Found!</strong> Redirecting to our ${
+              domain.includes("chattest")
+                ? "primary demo environment"
+                : "backup demo environment"
+            } where you can try all features.`;
+            return domain;
+          }
         }
-        
-        // Start countdown timer
-        function startCountdown() {
-            timer = setInterval(() => {
-                timeLeft--;
-                countdownElement.textContent = timeLeft;
-                
-                // Update progress bar
-                const progressPercent = (timeLeft / totalTime) * 100;
-                progressFill.style.width = progressPercent + '%';
-                
-                if (timeLeft <= 0) {
-                    clearInterval(timer);
-                    window.location.href = availableDomain;
-                }
-            }, 1000);
+
+        // If no domains are available, default to the first one
+        availableDomain = domains[0];
+        statusMessage.innerHTML =
+          "<strong>🚧 Development Notice:</strong> Our main chat service at <em>chat.ajuda-digital.com</em> is still in development.<br><br><strong>Using Primary Demo:</strong> Redirecting to our main demo environment (connectivity will be verified on arrival).";
+        return domains[0];
+      }
+
+      // Start countdown timer
+      function startCountdown() {
+        timer = setInterval(() => {
+          timeLeft--;
+          countdownElement.textContent = timeLeft;
+
+          // Update progress bar
+          const progressPercent = (timeLeft / totalTime) * 100;
+          progressFill.style.width = progressPercent + "%";
+
+          if (timeLeft <= 0) {
+            clearInterval(timer);
+            window.location.href = availableDomain;
+          }
+        }, 1000);
+      }
+
+      // Redirect immediately to available domain
+      function redirectNow() {
+        if (timer) clearInterval(timer);
+        window.location.href = availableDomain || domains[0];
+      }
+
+      // Initialize the page
+      async function initialize() {
+        // Find available domain first
+        await findAvailableDomain();
+
+        // Update meta refresh to use the available domain
+        const metaRefresh = document.querySelector(
+          'meta[http-equiv="refresh"]'
+        );
+        if (metaRefresh) {
+          metaRefresh.setAttribute("content", `30;url=${availableDomain}`);
         }
-        
-        // Redirect immediately to available domain
-        function redirectNow() {
-            if (timer) clearInterval(timer);
-            window.location.href = availableDomain || domains[0];
-        }
-        
-        // Initialize the page
-        async function initialize() {
-            // Find available domain first
-            await findAvailableDomain();
-            
-            // Update meta refresh to use the available domain
-            const metaRefresh = document.querySelector('meta[http-equiv="refresh"]');
-            if (metaRefresh) {
-                metaRefresh.setAttribute('content', `30;url=${availableDomain}`);
-            }
-            
-            // Start the countdown
-            startCountdown();
-        }
-        
-        // Add visual feedback for the button
-        document.addEventListener('DOMContentLoaded', function() {
-            const button = document.querySelector('.redirect-btn');
-            button.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-2px)';
-            });
-            button.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-            
-            // Initialize the domain checking
-            initialize();
+
+        // Start the countdown
+        startCountdown();
+      }
+
+      // Add visual feedback for the button
+      document.addEventListener("DOMContentLoaded", function () {
+        const button = document.querySelector(".redirect-btn");
+        button.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-2px)";
         });
+        button.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0)";
+        });
+
+        // Initialize the domain checking
+        initialize();
+      });
     </script>
-</body>
+  </body>
 </html>
