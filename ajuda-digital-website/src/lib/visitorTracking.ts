@@ -37,35 +37,35 @@ interface GeoApiConfig {
 // Multiple free APIs for geolocation (fallback chain)
 const GEOLOCATION_APIS: GeoApiConfig[] = [
   {
-    name: 'ip-api.com',
-    url: 'http://ip-api.com/json/',
+    name: "ip-api.com",
+    url: "http://ip-api.com/json/",
     transform: (data: GeoApiResponse) => ({
-      country: data.country || 'Unknown',
-      countryCode: data.countryCode || 'XX',
-      query: data.query || ''
-    })
+      country: data.country || "Unknown",
+      countryCode: data.countryCode || "XX",
+      query: data.query || "",
+    }),
   },
   {
-    name: 'ipapi.co',
-    url: 'https://ipapi.co/json/',
+    name: "ipapi.co",
+    url: "https://ipapi.co/json/",
     transform: (data: GeoApiResponse) => ({
-      country: data.country_name || 'Unknown',
-      countryCode: data.country_code || 'XX', 
-      query: data.ip || ''
-    })
+      country: data.country_name || "Unknown",
+      countryCode: data.country_code || "XX",
+      query: data.ip || "",
+    }),
   },
   {
-    name: 'ip.sb',
-    url: 'https://api.ip.sb/geoip',
+    name: "ip.sb",
+    url: "https://api.ip.sb/geoip",
     transform: (data: GeoApiResponse) => ({
-      country: data.country || 'Unknown',
-      countryCode: data.country_code || 'XX',
-      query: data.ip || ''
-    })
-  }
+      country: data.country || "Unknown",
+      countryCode: data.country_code || "XX",
+      query: data.ip || "",
+    }),
+  },
 ];
 
-const STORAGE_KEY = 'ajuda-digital-visitors-v2';
+const STORAGE_KEY = "ajuda-digital-visitors-v2";
 const API_ENDPOINT = process.env.NEXT_PUBLIC_VISITOR_API_URL; // Optional external API
 
 export class VisitorTracker {
@@ -90,14 +90,14 @@ export class VisitorTracker {
         return JSON.parse(stored);
       }
     } catch (error) {
-      console.warn('Failed to load visitor data from localStorage:', error);
+      console.warn("Failed to load visitor data from localStorage:", error);
     }
 
     return {
       totalVisitors: 0,
       countries: [],
       dailyVisits: [],
-      lastUpdated: new Date().toISOString()
+      lastUpdated: new Date().toISOString(),
     };
   }
 
@@ -106,7 +106,7 @@ export class VisitorTracker {
       this.data.lastUpdated = new Date().toISOString();
       localStorage.setItem(STORAGE_KEY, JSON.stringify(this.data));
     } catch (error) {
-      console.warn('Failed to save visitor data to localStorage:', error);
+      console.warn("Failed to save visitor data to localStorage:", error);
     }
   }
 
@@ -127,27 +127,271 @@ export class VisitorTracker {
 
     // Fallback if all APIs fail
     return {
-      country: 'Timor-Leste',
-      countryCode: 'TL',
-      query: 'unknown'
+      country: "Timor-Leste",
+      countryCode: "TL",
+      query: "unknown",
     };
   }
 
   private getCountryFlag(countryCode: string): string {
     const flagMap: Record<string, string> = {
-      'TL': '🇹🇱', 'US': '🇺🇸', 'ID': '🇮🇩', 'AU': '🇦🇺', 'PT': '🇵🇹',
-      'BR': '🇧🇷', 'SG': '🇸🇬', 'MY': '🇲🇾', 'JP': '🇯🇵', 'KR': '🇰🇷',
-      'CN': '🇨🇳', 'IN': '🇮🇳', 'GB': '🇬🇧', 'DE': '🇩🇪', 'FR': '🇫🇷',
-      'NL': '🇳🇱', 'CA': '🇨🇦', 'PH': '🇵🇭', 'TH': '🇹🇭', 'VN': '🇻🇳',
-      'ES': '🇪🇸', 'IT': '🇮🇹', 'RU': '🇷🇺', 'MX': '🇲🇽', 'AR': '🇦🇷'
+      AD: "🇦🇩",
+      AE: "🇦🇪",
+      AF: "🇦🇫",
+      AG: "🇦🇬",
+      AI: "🇦🇮",
+      AL: "🇦🇱",
+      AM: "🇦🇲",
+      AO: "🇦🇴",
+      AQ: "🇦🇶",
+      AR: "🇦🇷",
+      AS: "🇦🇸",
+      AT: "🇦🇹",
+      AU: "🇦🇺",
+      AW: "🇦🇼",
+      AX: "🇦🇽",
+      AZ: "🇦🇿",
+      BA: "🇧🇦",
+      BB: "🇧🇧",
+      BD: "🇧🇩",
+      BE: "🇧🇪",
+      BF: "🇧🇫",
+      BG: "🇧🇬",
+      BH: "🇧🇭",
+      BI: "🇧🇮",
+      BJ: "🇧🇯",
+      BL: "🇧🇱",
+      BM: "🇧🇲",
+      BN: "🇧🇳",
+      BO: "🇧🇴",
+      BQ: "🇧🇶",
+      BR: "🇧🇷",
+      BS: "🇧🇸",
+      BT: "🇧🇹",
+      BV: "🇧🇻",
+      BW: "🇧🇼",
+      BY: "🇧🇾",
+      BZ: "🇧🇿",
+      CA: "🇨🇦",
+      CC: "🇨🇨",
+      CD: "🇨🇩",
+      CF: "🇨🇫",
+      CG: "🇨🇬",
+      CH: "🇨🇭",
+      CI: "🇨🇮",
+      CK: "🇨🇰",
+      CL: "🇨🇱",
+      CM: "🇨🇲",
+      CN: "🇨🇳",
+      CO: "🇨🇴",
+      CR: "🇨🇷",
+      CU: "🇨🇺",
+      CV: "🇨🇻",
+      CW: "🇨🇼",
+      CX: "🇨🇽",
+      CY: "🇨🇾",
+      CZ: "🇨🇿",
+      DE: "🇩🇪",
+      DJ: "🇩🇯",
+      DK: "🇩🇰",
+      DM: "🇩🇲",
+      DO: "🇩🇴",
+      DZ: "🇩🇿",
+      EC: "🇪🇨",
+      EE: "🇪🇪",
+      EG: "🇪🇬",
+      EH: "🇪🇭",
+      ER: "🇪🇷",
+      ES: "🇪🇸",
+      ET: "🇪🇹",
+      FI: "🇫🇮",
+      FJ: "🇫🇯",
+      FK: "🇫🇰",
+      FM: "🇫🇲",
+      FO: "🇫🇴",
+      FR: "🇫🇷",
+      GA: "🇬🇦",
+      GB: "🇬🇧",
+      GD: "🇬🇩",
+      GE: "🇬🇪",
+      GF: "🇬🇫",
+      GG: "🇬🇬",
+      GH: "🇬🇭",
+      GI: "🇬🇮",
+      GL: "🇬🇱",
+      GM: "🇬🇲",
+      GN: "🇬🇳",
+      GP: "🇬🇵",
+      GQ: "🇬🇶",
+      GR: "🇬🇷",
+      GS: "🇬🇸",
+      GT: "🇬🇹",
+      GU: "🇬🇺",
+      GW: "🇬🇼",
+      GY: "🇬🇾",
+      HK: "🇭🇰",
+      HM: "🇭🇲",
+      HN: "🇭🇳",
+      HR: "🇭🇷",
+      HT: "🇭🇹",
+      HU: "🇭🇺",
+      ID: "🇮🇩",
+      IE: "🇮🇪",
+      IL: "🇮🇱",
+      IM: "🇮🇲",
+      IN: "🇮🇳",
+      IO: "🇮🇴",
+      IQ: "🇮🇶",
+      IR: "🇮🇷",
+      IS: "🇮🇸",
+      IT: "🇮🇹",
+      JE: "🇯🇪",
+      JM: "🇯🇲",
+      JO: "🇯🇴",
+      JP: "🇯🇵",
+      KE: "🇰🇪",
+      KG: "🇰🇬",
+      KH: "🇰🇭",
+      KI: "🇰🇮",
+      KM: "🇰🇲",
+      KN: "🇰🇳",
+      KP: "🇰🇵",
+      KR: "🇰🇷",
+      KW: "🇰🇼",
+      KY: "🇰🇾",
+      KZ: "🇰🇿",
+      LA: "🇱🇦",
+      LB: "🇱🇧",
+      LC: "🇱🇨",
+      LI: "🇱🇮",
+      LK: "🇱🇰",
+      LR: "🇱🇷",
+      LS: "🇱🇸",
+      LT: "🇱🇹",
+      LU: "🇱🇺",
+      LV: "🇱🇻",
+      LY: "🇱🇾",
+      MA: "🇲🇦",
+      MC: "🇲🇨",
+      MD: "🇲🇩",
+      ME: "🇲🇪",
+      MF: "🇲🇫",
+      MG: "🇲🇬",
+      MH: "🇲🇭",
+      MK: "🇲🇰",
+      ML: "🇲🇱",
+      MM: "🇲🇲",
+      MN: "🇲🇳",
+      MO: "🇲🇴",
+      MP: "🇲🇵",
+      MQ: "🇲🇶",
+      MR: "🇲🇷",
+      MS: "🇲🇸",
+      MT: "🇲🇹",
+      MU: "🇲🇺",
+      MV: "🇲🇻",
+      MW: "🇲🇼",
+      MX: "🇲🇽",
+      MY: "🇲🇾",
+      MZ: "🇲🇿",
+      NA: "🇳🇦",
+      NC: "🇳🇨",
+      NE: "🇳🇪",
+      NF: "🇳🇫",
+      NG: "🇳🇬",
+      NI: "🇳🇮",
+      NL: "🇳🇱",
+      NO: "🇳🇴",
+      NP: "🇳🇵",
+      NR: "🇳🇷",
+      NU: "🇳🇺",
+      NZ: "🇳🇿",
+      OM: "🇴🇲",
+      PA: "🇵🇦",
+      PE: "🇵🇪",
+      PF: "🇵🇫",
+      PG: "🇵🇬",
+      PH: "🇵🇭",
+      PK: "🇵🇰",
+      PL: "🇵🇱",
+      PM: "🇵🇲",
+      PN: "🇵🇳",
+      PR: "🇵🇷",
+      PS: "🇵🇸",
+      PT: "🇵🇹",
+      PW: "🇵🇼",
+      PY: "🇵🇾",
+      QA: "🇶🇦",
+      RE: "🇷🇪",
+      RO: "🇷🇴",
+      RS: "🇷🇸",
+      RU: "🇷🇺",
+      RW: "🇷🇼",
+      SA: "🇸🇦",
+      SB: "🇸🇧",
+      SC: "🇸🇨",
+      SD: "🇸🇩",
+      SE: "🇸🇪",
+      SG: "🇸🇬",
+      SH: "🇸🇭",
+      SI: "🇸🇮",
+      SJ: "🇸🇯",
+      SK: "🇸🇰",
+      SL: "🇸🇱",
+      SM: "🇸🇲",
+      SN: "🇸🇳",
+      SO: "🇸🇴",
+      SR: "🇸🇷",
+      SS: "🇸🇸",
+      ST: "🇸🇹",
+      SV: "🇸🇻",
+      SX: "🇸🇽",
+      SY: "🇸🇾",
+      SZ: "🇸🇿",
+      TC: "🇹🇨",
+      TD: "🇹🇩",
+      TF: "🇹🇫",
+      TG: "🇹🇬",
+      TH: "🇹🇭",
+      TJ: "🇹🇯",
+      TK: "🇹🇰",
+      TL: "🇹🇱",
+      TM: "🇹🇲",
+      TN: "🇹🇳",
+      TO: "🇹🇴",
+      TR: "🇹🇷",
+      TT: "🇹🇹",
+      TV: "🇹🇻",
+      TW: "🇹🇼",
+      TZ: "🇹🇿",
+      UA: "🇺🇦",
+      UG: "🇺🇬",
+      UM: "🇺🇲",
+      US: "🇺🇸",
+      UY: "🇺🇾",
+      UZ: "🇺🇿",
+      VA: "🇻🇦",
+      VC: "🇻🇨",
+      VE: "🇻🇪",
+      VG: "🇻🇬",
+      VI: "🇻🇮",
+      VN: "🇻🇳",
+      VU: "🇻🇺",
+      WF: "🇼🇫",
+      WS: "🇼🇸",
+      YE: "🇾🇪",
+      YT: "🇾🇹",
+      ZA: "🇿🇦",
+      ZM: "🇿🇲",
+      ZW: "🇿🇼",
     };
-    return flagMap[countryCode] || '🌍';
+    return flagMap[countryCode] || "🌍";
   }
 
   private updateDailyVisits(): void {
-    const today = new Date().toISOString().split('T')[0];
-    const existingDay = this.data.dailyVisits.find(day => day.date === today);
-    
+    const today = new Date().toISOString().split("T")[0];
+    const existingDay = this.data.dailyVisits.find((day) => day.date === today);
+
     if (existingDay) {
       existingDay.count += 1;
     } else {
@@ -163,14 +407,14 @@ export class VisitorTracker {
   private async syncWithFirebase(): Promise<void> {
     try {
       // Dynamic import to avoid SSR issues
-      const { default: FirebaseService } = await import('./firebaseService');
+      const { default: FirebaseService } = await import("./firebaseService");
       const firebaseService = FirebaseService.getInstance();
-      
+
       if (firebaseService.isReady()) {
         await firebaseService.saveVisitorData(this.data);
       }
     } catch (error) {
-      console.warn('Failed to sync with Firebase:', error);
+      console.warn("Failed to sync with Firebase:", error);
     }
   }
 
@@ -179,38 +423,40 @@ export class VisitorTracker {
 
     try {
       await fetch(API_ENDPOINT, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          action: 'update_visitor_data',
-          data: this.data
-        })
+          action: "update_visitor_data",
+          data: this.data,
+        }),
       });
     } catch (error) {
-      console.warn('Failed to sync with external API:', error);
+      console.warn("Failed to sync with external API:", error);
     }
   }
 
   public async trackVisitor(): Promise<VisitorData> {
     try {
       // Check if user already visited today (prevent double counting)
-      const lastVisit = localStorage.getItem('ajuda-digital-last-visit');
-      const today = new Date().toISOString().split('T')[0];
-      
+      const lastVisit = localStorage.getItem("ajuda-digital-last-visit");
+      const today = new Date().toISOString().split("T")[0];
+
       if (lastVisit === today) {
         return this.data; // Don't count same-day visits
       }
 
       // Get visitor location
       const location = await this.getGeolocation();
-      
+
       // Update visitor data
       this.data.totalVisitors += 1;
-      
+
       // Update country data
-      const existingCountry = this.data.countries.find(c => c.code === location.countryCode);
+      const existingCountry = this.data.countries.find(
+        (c) => c.code === location.countryCode
+      );
       if (existingCountry) {
         existingCountry.count += 1;
       } else {
@@ -218,11 +464,11 @@ export class VisitorTracker {
           code: location.countryCode,
           name: location.country,
           flag: this.getCountryFlag(location.countryCode),
-          count: 1
+          count: 1,
         });
       }
 
-      // Sort countries by count and keep top 20
+      // Sort countries by count and keep top 10
       this.data.countries.sort((a, b) => b.count - a.count);
       this.data.countries = this.data.countries.slice(0, 20);
 
@@ -233,7 +479,7 @@ export class VisitorTracker {
       this.saveLocalData();
 
       // Mark today as visited
-      localStorage.setItem('ajuda-digital-last-visit', today);
+      localStorage.setItem("ajuda-digital-last-visit", today);
 
       // Sync with Firebase (if configured)
       this.syncWithFirebase();
@@ -243,7 +489,7 @@ export class VisitorTracker {
 
       return this.data;
     } catch (error) {
-      console.error('Failed to track visitor:', error);
+      console.error("Failed to track visitor:", error);
       return this.data;
     }
   }
@@ -255,18 +501,21 @@ export class VisitorTracker {
   public async loadFromFirebase(): Promise<VisitorData> {
     try {
       // Dynamic import to avoid SSR issues
-      const { default: FirebaseService } = await import('./firebaseService');
+      const { default: FirebaseService } = await import("./firebaseService");
       const firebaseService = FirebaseService.getInstance();
-      
+
       if (firebaseService.isReady()) {
         const firebaseData = await firebaseService.loadVisitorData();
-        if (firebaseData && firebaseData.totalVisitors > this.data.totalVisitors) {
+        if (
+          firebaseData &&
+          firebaseData.totalVisitors > this.data.totalVisitors
+        ) {
           this.data = firebaseData;
           this.saveLocalData();
         }
       }
     } catch (error) {
-      console.warn('Failed to load from Firebase:', error);
+      console.warn("Failed to load from Firebase:", error);
     }
 
     return this.data;
@@ -285,7 +534,7 @@ export class VisitorTracker {
         }
       }
     } catch (error) {
-      console.warn('Failed to load from external API:', error);
+      console.warn("Failed to load from external API:", error);
     }
 
     return this.data;
