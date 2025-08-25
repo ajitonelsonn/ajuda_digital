@@ -48,7 +48,7 @@ const teamMembers: TeamMember[] = [
     },
   },
   {
-    name: "Abrao Glorito da Costa",
+    name: "Abrao Glorito DC",
     role: "Team Member",
     bio: "Second-year Bachelor student in Computer Science at Dili Institute of Technology (DIT), with a strong interest in learning new technologies.",
     image: "/images/team-member-3.jpg",
@@ -171,12 +171,18 @@ export default function TeamPage() {
                     {member.skills.map((skill, skillIndex) => {
                       // Check if skill is a website link
                       if (skill.includes("www.") || skill.includes("http")) {
-                        const url = skill.includes("Check : ") ? skill.replace("Check : ", "") : skill;
-                        const displayText = skill.includes("Check : ") ? skill : `Visit ${url}`;
+                        const url = skill.includes("Check : ")
+                          ? skill.replace("Check : ", "")
+                          : skill;
+                        const displayText = skill.includes("Check : ")
+                          ? skill
+                          : `Visit ${url}`;
                         return (
                           <a
                             key={skillIndex}
-                            href={url.startsWith("http") ? url : `https://${url}`}
+                            href={
+                              url.startsWith("http") ? url : `https://${url}`
+                            }
                             target="_blank"
                             rel="noopener noreferrer"
                             className="px-2 py-1 bg-red-50 text-red-600 text-xs rounded-full hover:bg-red-100 transition-colors cursor-pointer"
