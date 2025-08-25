@@ -66,7 +66,7 @@ Our chatbot leverages cutting-edge AI technologies specifically chosen for South
 
 Ajuda Digital operates as a **complete ecosystem** with two main platforms:
 
-### 🌐 **www.ajuda-digital.com** (This Website)
+### 🌐 **www.ajuda-digital.com** (Website)
 
 **Showcase & Information Platform**
 
