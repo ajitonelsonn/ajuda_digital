@@ -53,13 +53,17 @@ export default function Footer() {
             </p>
             <div className="flex items-center space-x-2 px-3 py-2 bg-gray-800/50 rounded-lg backdrop-blur-sm border border-gray-700/50 w-fit">
               <MapPin size={16} className="text-red-400" />
-              <span className="text-gray-300 text-sm font-medium">{t("footer.madeInTimorLeste")} 🇹🇱</span>
+              <span className="text-gray-300 text-sm font-medium">
+                {t("footer.madeInTimorLeste")} 🇹🇱
+              </span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">{t("footer.quickLinks")}</h3>
+            <h3 className="text-lg font-semibold mb-6 text-white">
+              {t("footer.quickLinks")}
+            </h3>
             <ul className="space-y-3">
               <li>
                 <Link
@@ -93,7 +97,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">{t("footer.connect")}</h3>
+            <h3 className="text-lg font-semibold mb-6 text-white">
+              {t("footer.connect")}
+            </h3>
             <ul className="space-y-3">
               <li>
                 <a
@@ -108,7 +114,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/ajitonelsonn/ajuda_digital"
+                  href="https://forms.gle/VzKciePuvih1Uau7A"
                   className="text-gray-300 hover:text-white transition-all duration-300 flex items-center space-x-3 group p-2 rounded-lg hover:bg-gray-800/30"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -129,9 +135,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            {t("footer.copyright")}
-          </p>
+          <p className="text-gray-400 text-sm">{t("footer.copyright")}</p>
           <p className="text-gray-400 text-sm mt-2 sm:mt-0">
             {t("footer.poweredBy")}
           </p>
