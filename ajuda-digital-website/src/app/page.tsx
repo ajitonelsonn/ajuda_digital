@@ -197,37 +197,37 @@ export default function HomePage() {
                     title: t("challenges.scatteredInfo.title"),
                     description: t("challenges.scatteredInfo.description"),
                     color: "red",
-                    emoji: "🌐"
+                    emoji: "🌐",
                   },
                   {
-                    image: "/images/ps/Office_Visits_Required.png", 
+                    image: "/images/ps/Office_Visits_Required.png",
                     title: t("challenges.officeVisits.title"),
                     description: t("challenges.officeVisits.description"),
                     color: "yellow",
-                    emoji: "🏢"
+                    emoji: "🏢",
                   },
                   {
                     image: "/images/ps/Document_Rejections.png",
-                    title: t("challenges.documentRejections.title"), 
+                    title: t("challenges.documentRejections.title"),
                     description: t("challenges.documentRejections.description"),
                     color: "red",
-                    emoji: "❌"
-                  }
+                    emoji: "❌",
+                  },
                 ].map((challenge, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 50, scale: 0.9 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    whileHover={{ 
-                      y: -10, 
+                    whileHover={{
+                      y: -10,
                       scale: 1.02,
-                      transition: { duration: 0.3 }
+                      transition: { duration: 0.3 },
                     }}
-                    transition={{ 
-                      duration: 0.6, 
+                    transition={{
+                      duration: 0.6,
                       delay: index * 0.2,
                       type: "spring",
-                      stiffness: 100
+                      stiffness: 100,
                     }}
                     className={`bg-gradient-to-br from-${challenge.color}-50 to-${challenge.color}-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-${challenge.color}-200 group overflow-hidden relative`}
                   >
@@ -235,9 +235,9 @@ export default function HomePage() {
                     <div className="absolute inset-0 opacity-5">
                       <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-900" />
                     </div>
-                    
+
                     {/* Image Container */}
-                    <motion.div 
+                    <motion.div
                       className="relative mb-6 rounded-lg overflow-hidden shadow-md"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
@@ -260,12 +260,16 @@ export default function HomePage() {
                         transition={{ delay: index * 0.2 + 0.3 }}
                         className="flex items-center mb-3"
                       >
-                        <span className="text-2xl mr-3 animate-pulse">{challenge.emoji}</span>
-                        <h3 className={`text-xl font-bold text-${challenge.color}-700 group-hover:text-${challenge.color}-800 transition-colors`}>
+                        <span className="text-2xl mr-3 animate-pulse">
+                          {challenge.emoji}
+                        </span>
+                        <h3
+                          className={`text-xl font-bold text-${challenge.color}-700 group-hover:text-${challenge.color}-800 transition-colors`}
+                        >
                           {challenge.title}
                         </h3>
                       </motion.div>
-                      <motion.p 
+                      <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: index * 0.2 + 0.4 }}
@@ -276,7 +280,9 @@ export default function HomePage() {
                     </div>
 
                     {/* Hover Glow Effect */}
-                    <div className={`absolute inset-0 bg-gradient-to-br from-${challenge.color}-400/0 to-${challenge.color}-600/0 group-hover:from-${challenge.color}-400/5 group-hover:to-${challenge.color}-600/10 transition-all duration-300 rounded-xl`} />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br from-${challenge.color}-400/0 to-${challenge.color}-600/0 group-hover:from-${challenge.color}-400/5 group-hover:to-${challenge.color}-600/10 transition-all duration-300 rounded-xl`}
+                    />
                   </motion.div>
                 ))}
               </div>
@@ -356,10 +362,10 @@ export default function HomePage() {
               >
                 {/* Background gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 via-transparent to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                
+
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Logo container with enhanced styling */}
@@ -378,17 +384,17 @@ export default function HomePage() {
                       <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-500 rounded-xl opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300" />
                     </div>
                   </div>
-                  
+
                   {/* Title */}
                   <h3 className="text-lg font-bold text-gray-900 text-center mb-3 group-hover:text-gray-800 transition-colors">
                     {tech.name}
                   </h3>
-                  
+
                   {/* Description */}
                   <p className="text-gray-600 text-sm text-center leading-relaxed group-hover:text-gray-700 transition-colors">
                     {tech.description}
                   </p>
-                  
+
                   {/* Bottom accent */}
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
