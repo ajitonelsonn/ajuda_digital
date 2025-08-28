@@ -1,7 +1,7 @@
 {
   "header": {
     "home": "Home",
-    "team": "Team", 
+    "team": "Team",
     "datasets": "Datasets",
     "tryDemo": "Try Demo"
   },
@@ -20,7 +20,7 @@
       "description": "Information exists mainly in Portuguese on complicated government websites"
     },
     "officeVisits": {
-      "title": "Office Visits Required", 
+      "title": "Office Visits Required",
       "description": "Citizens must visit offices to read information boards or ask family for help"
     },
     "documentRejections": {
@@ -36,7 +36,7 @@
       "description": "Department-specific chatbots for Civil Registry, Immigration, Education, Business, and more."
     },
     "multilingualSupport": {
-      "title": "Multilingual Support", 
+      "title": "Multilingual Support",
       "description": "Communicate in English, Portuguese, Tetum, and other languages."
     },
     "instantResponses": {
@@ -66,6 +66,6 @@
     "contactUs": "Contact Us",
     "github": "GitHub",
     "copyright": "© 2025 Ajuda Digital. Built with ❤️ in Timor-Leste.",
-    "poweredBy": "Powered by SEA-LION AI Model"
+    "poweredBy": "Home grown Government Chatbot by Timorese Youth"
   }
 }

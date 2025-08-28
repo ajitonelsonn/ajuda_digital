@@ -1,7 +1,7 @@
 {
   "header": {
     "home": "Início",
-    "team": "Equipe", 
+    "team": "Equipe",
     "datasets": "Conjuntos de Dados",
     "tryDemo": "Experimente"
   },
@@ -20,7 +20,7 @@
       "description": "As informações existem principalmente em português em sites governamentais complicados"
     },
     "officeVisits": {
-      "title": "Visitas ao Escritório Necessárias", 
+      "title": "Visitas ao Escritório Necessárias",
       "description": "Os cidadãos devem visitar escritórios para ler quadros de informações ou pedir ajuda à família"
     },
     "documentRejections": {
@@ -36,7 +36,7 @@
       "description": "Chatbots específicos por departamento para Registro Civil, Imigração, Educação, Negócios e muito mais."
     },
     "multilingualSupport": {
-      "title": "Suporte Multilíngue", 
+      "title": "Suporte Multilíngue",
       "description": "Comunique-se em inglês, português, tetum e outras línguas."
     },
     "instantResponses": {
@@ -66,6 +66,6 @@
     "contactUs": "Contate-nos",
     "github": "GitHub",
     "copyright": "© 2025 Ajuda Digital. Construído com ❤️ em Timor-Leste.",
-    "poweredBy": "Alimentado pelo Modelo de IA SEA-LION"
+    "poweredBy": "Chatbot Governamental Criado por Jovens Timorenses"
   }
 }
