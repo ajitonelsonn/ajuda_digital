@@ -183,6 +183,29 @@
         transform: translateY(0);
       }
 
+      .back-btn {
+        background: #6b7280;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        margin-top: 16px;
+        transition: all 0.3s ease;
+        font-family: inherit;
+      }
+
+      .back-btn:hover {
+        background: #4b5563;
+        transform: translateY(-1px);
+      }
+
+      .back-btn:active {
+        transform: translateY(0);
+      }
+
       .footer {
         margin-top: 32px;
         font-size: 12px;
@@ -255,6 +278,10 @@
 
       <button class="redirect-btn" onclick="redirectNow()">
         Try Demo Version Now →
+      </button>
+
+      <button class="back-btn" onclick="goBack()">
+        ← Back to Ajuda Digital
       </button>
 
       <div class="footer">Made in Timor-Leste 🇹🇱</div>
@@ -343,6 +370,12 @@
       function redirectNow() {
         if (timer) clearInterval(timer);
         window.location.href = availableDomain || domains[0];
+      }
+
+      // Go back to main website
+      function goBack() {
+        if (timer) clearInterval(timer);
+        window.location.href = "https://www.ajuda-digital.com/";
       }
 
       // Initialize the page
