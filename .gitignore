@@ -6,4 +6,16 @@ open_webui.zip
 ajuda-digital.tar
 Test
 .env*
+env*
 AWSCLIV2.pkg
+
+ecs-task-trust-policy.json
+rds-policy.json
+logs-policy.json
+s3-access-policy.json
+task-definition.json
+bedrock-gateway-task-definition-v2.json
+bedrock-gateway-task-definition-v4.json
+bedrock-gateway-task-definition.json
+bedrock-policy-v2.json
+bedrock-policy.json
