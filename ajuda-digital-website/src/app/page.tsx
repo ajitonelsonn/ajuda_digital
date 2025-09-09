@@ -140,7 +140,7 @@ export default function HomePage() {
               transition={{ delay: 0.6, duration: 0.6 }}
             >
               <Link
-                href="https://chat.ajuda-digital.com"
+                href="https://chattest.ajuda-digital.com"
                 className="btn-primary group relative overflow-hidden flex items-center space-x-2"
               >
                 <motion.div
@@ -440,7 +440,7 @@ export default function HomePage() {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <Link
-                href="https://chat.ajuda-digital.com"
+                href="https://chattest.ajuda-digital.com"
                 className="bg-white text-red-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 hover:shadow-lg transition-all duration-300 inline-flex items-center space-x-2"
               >
                 <motion.div

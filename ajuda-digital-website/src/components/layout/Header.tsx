@@ -49,7 +49,7 @@ export default function Header() {
             ))}
             <LanguageSelector />
             <Link
-              href="https://chat.ajuda-digital.com"
+              href="https://chattest.ajuda-digital.com"
               className="bg-gradient-to-r from-red-600 to-yellow-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-200"
             >
               {t("header.tryDemo")}
@@ -85,7 +85,7 @@ export default function Header() {
                 <LanguageSelector />
               </div>
               <Link
-                href="https://chat.ajuda-digital.com"
+                href="https://chattest.ajuda-digital.com"
                 className="block px-3 py-2 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-md text-center mt-4"
                 onClick={() => setIsMenuOpen(false)}
               >
