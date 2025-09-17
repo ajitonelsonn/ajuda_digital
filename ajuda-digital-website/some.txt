@@ -1,0 +1,23 @@
+Right now we only avaliable 4 models like:
+And each model we only have some data that we collected from website tech picture on the board and also download from goverment website like bellow data, because of time and access to goverment data is chalenging and verry dificult to get the data but from this hackthon and from this iniciative I think our goverment will suport us because we already have a product
+1: "Civil Registry & Identity Model (Registo Civil)",
+https://ajuda-digital.s3.us-east-1.amazonaws.com/Civil+Registry+%26+Identity+Model/CERTIDA%CC%83O+NASCIMENTO+RDTL.pdf
+2: "Immigration & Travel Model (Imigração e Viagens)",
+https://ajuda-digital.s3.us-east-1.amazonaws.com/Immigration+%26+Travel+Model/PASSAPORTE+KOMUM.pdf
+https://ajuda-digital.s3.us-east-1.amazonaws.com/Immigration+%26+Travel+Model/THE+PROCESS+FOR+PASSPORT.txt
+https://ajuda-digital.s3.us-east-1.amazonaws.com/Immigration+%26+Travel+Model/Lei+11-2017+LIA+com+Indice.pdf
+4: "Business & Commerce Model (Negócios e Comércio)",
+https://ajuda-digital.s3.us-east-1.amazonaws.com/Business+%26+Commerce+Model/1_DIPLOMA-MINISTERIAL-N-33-2023-DECLARACAO-PREVIA-EM-PORTUGUES-E-INGLES_1-COM-ANEXOS-I_II_III.pdf
+https://ajuda-digital.s3.us-east-1.amazonaws.com/Business+%26+Commerce+Model/FAQ's+https-%3Aserve.gov.tl.pdf
+5: "Legal & Constitutional Model (Jurídico e Constitucional)",
+https://ajuda-digital.s3.us-east-1.amazonaws.com/Immigration+%26+Travel+Model/Lei+11-2017+LIA+com+Indice.pdf
+https://ajuda-digital.s3.us-east-1.amazonaws.com/Legal+%26+Constitutional+Model/Constitution_RDTL_ENG.pdf
+
+
+For the other model are soon:
+3: "Education Model (Educação)",
+6: "Elections & Civic Participation (Eleições e Participação Cívica)",
+7: "Health & Social Services (Saúde e Serviços Sociais)",
+8: "Finance & Taxation (Finanças e Tributação)",
+9: "Land & Property (Terras e Propriedade)",
+10: "Employment & Labor (Emprego e Trabalho)"
