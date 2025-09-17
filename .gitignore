@@ -19,3 +19,5 @@ bedrock-gateway-task-definition-v4.json
 bedrock-gateway-task-definition.json
 bedrock-policy-v2.json
 bedrock-policy.json
+acm-policy-v2.json
+acm-policy.json

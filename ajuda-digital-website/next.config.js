@@ -16,12 +16,12 @@ const nextConfig = {
     return [
       {
         source: "/app",
-        destination: "https://chattest.ajuda-digital.com",
+        destination: "https://chat.ajuda-digital.com",
         permanent: true,
       },
       {
         source: "/chat",
-        destination: "https://chattest.ajuda-digital.com",
+        destination: "https://chat.ajuda-digital.com",
         permanent: true,
       },
     ];
