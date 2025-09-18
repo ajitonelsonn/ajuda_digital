@@ -111,6 +111,8 @@ OPENAI_API_KEY=bedrock-api-key
 
 ### 1. Prepare Infrastructure
 
+For Deployment to Amazon ECS see full guide in here: [Ajuda-Digital-AWS-Production-Deployment/Open-WebUI-Deployment-to-Amazon-ECS.md](Ajuda-Digital-AWS-Production-Deployment/Open-WebUI-Deployment-to-Amazon-ECS.md)
+
 ```bash
 # Configure AWS CLI
 aws configure
