@@ -191,7 +191,7 @@ _Or register with your own account_
 | 💬 **Main Chatbot**       | AI assistant interface       | [Modified Open WebUI](open_webui_mod_doc/README.MD)                   |
 | ☁️ **AWS Deployment**     | Production infrastructure    | [AWS Architecture](Ajuda-Digital-AWS-Production-Deployment/README.md) |
 | 📊 **Data Processing**    | Document processing pipeline | [Data Processing](Prosses-Data/README.MD)                             |
-| 📋 **Dataset Collection** | Government data sources      | [Dataset Status](ajuda-digital-website/src/app/datasets/page.tsx)     |
+| 📋 **Dataset Collection** | Government data sources      | [Dataset Status](https://www.ajuda-digital.com/dataset)               |
 
 ## 🚀 **Future Roadmap**
 
