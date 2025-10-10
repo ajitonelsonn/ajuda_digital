@@ -58,11 +58,14 @@ export default function DatasetsPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 About This Project
               </h2>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-4">
                 Ajuda Digital is a homegrown government chatbot developed by Timorese youth,
                 designed to make government services accessible to all citizens. Winner of the
                 <span className="font-semibold text-red-600"> Most Innovative Use of SEA-LION</span> award
                 in the Pan-SEA AI Developer Challenge 2025.
+              </p>
+              <p className="text-gray-600 text-sm">
+                Winners will be officially announced during AIMX on 28 November 2025.
               </p>
             </motion.div>
           </motion.div>
