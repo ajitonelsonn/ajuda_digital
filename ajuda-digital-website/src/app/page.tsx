@@ -10,9 +10,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TextReveal from "@/components/animations/TextReveal";
 import LoadingScreen from "@/components/animations/LoadingScreen";
+import WinnerModal from "@/components/animations/WinnerModal";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const getFeatures = (t: (key: string) => string) => [
@@ -75,12 +76,16 @@ const technologies = [
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
+  const [showWinnerModal, setShowWinnerModal] = useState(false);
   const { t } = useLanguage();
   const features = getFeatures(t);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
-    setTimeout(() => setShowContent(true), 100);
+    setTimeout(() => {
+      setShowContent(true);
+      setShowWinnerModal(true);
+    }, 100);
   };
 
   if (isLoading) {
@@ -88,12 +93,17 @@ export default function HomePage() {
   }
 
   return (
-    <motion.div
-      className="min-h-screen"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: showContent ? 1 : 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <>
+      <WinnerModal
+        isOpen={showWinnerModal}
+        onClose={() => setShowWinnerModal(false)}
+      />
+      <motion.div
+        className="min-h-screen"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showContent ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+      >
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -461,6 +471,7 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-    </motion.div>
+      </motion.div>
+    </>
   );
 }
