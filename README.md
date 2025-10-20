@@ -2,7 +2,7 @@
 
 **Homegrown Government Chatbot by Timorese Youth**
 
-_Pan-SEA AI Developer Challenge 2025 - Public Sector Track_
+![_Pan-SEA AI Developer Challenge 2025 - Public Sector Track_](https://seadeveloperchallenge.ai/)
 
 ---
 
