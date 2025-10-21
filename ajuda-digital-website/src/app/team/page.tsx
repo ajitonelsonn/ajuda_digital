@@ -8,6 +8,7 @@ import {
   Code,
   Brain,
   Palette,
+  Award,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -17,6 +18,7 @@ interface TeamMember {
   bio: string;
   image: string;
   skills: string[];
+  certificate?: string;
   social: {
     github?: string;
     linkedin?: string;
@@ -31,6 +33,7 @@ const teamMembers: TeamMember[] = [
     bio: "Big Data Engineer at Viettel Timor and passionate about Artificial Intelligence and Machine Learning.",
     image: "/images/team-member-1.jpg",
     skills: ["Check : www.ajitonelson.com"],
+    certificate: "https://www.virtualbadge.io/certificate-validator?credential=63e1cd3b-21f9-4342-8ae5-948a0d539552",
     social: {
       github: "https://github.com/ajitonelsonn",
       linkedin: "https://linkedin.com/in/ajitonelson",
@@ -39,9 +42,10 @@ const teamMembers: TeamMember[] = [
   {
     name: "Jedinilda S. Seixas dos Reis",
     role: "Team Member",
-    bio: "Fresh graduate from Universidade Nacional Timor Lorosa’e (UNTL) with a Licenciatura em Engenharia Informática (L.Eng.Inf). Passionate about using new technologies like AI and others to solve real problems.",
+    bio: "Fresh graduate from Universidade Nacional Timor Lorosa'e (UNTL) with a Licenciatura em Engenharia Informática (L.Eng.Inf). Passionate about using new technologies like AI and others to solve real problems.",
     image: "/images/team-member-2.jpg",
     skills: ["UI/UX", "Networking"],
+    certificate: "https://www.virtualbadge.io/certificate-validator?credential=d35105ca-41da-47b4-a171-f8003d595138",
     social: {
       github: "https://github.com/Jedinilda20",
       linkedin: "https://linkedin.com/in/jedinildadosreis",
@@ -53,6 +57,7 @@ const teamMembers: TeamMember[] = [
     bio: "Second-year Bachelor student in Computer Science at Dili Institute of Technology (DIT), with a strong interest in learning new technologies.",
     image: "/images/team-member-3.jpg",
     skills: ["Python", "Java", "MySQL"],
+    certificate: "https://www.virtualbadge.io/certificate-validator?credential=9864edea-a1a1-4389-b309-2c94e0fc28c8",
     social: {
       github: "https://github.com/abraog",
       linkedin: "https://linkedin.com/in/abraoglorito",
@@ -123,8 +128,21 @@ export default function TeamPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-100"
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-100 relative"
               >
+                {/* Winner Certificate Badge */}
+                {member.certificate && (
+                  <a
+                    href={member.certificate}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View Winner Certificate"
+                    className="absolute bottom-4 right-4 z-10 bg-gradient-to-r from-yellow-400 to-yellow-500 p-3 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group"
+                  >
+                    <Award size={32} className="text-white" />
+                  </a>
+                )}
+
                 {/* Profile Image */}
                 <div className="relative h-64 bg-gradient-to-br from-red-100 to-yellow-100 overflow-hidden">
                   <Image
