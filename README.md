@@ -166,7 +166,7 @@ _Or register with your own account_
 
 **Built with ❤️ by young developers from Timor-Leste:**
 
-### **Core Team**
+### **Core Team** - [Team](https://www.ajuda-digital.com/team)
 
 - **[Ajito Nelson Lucio da Costa](https://github.com/ajitonelsonn)** - Team Leader
 
