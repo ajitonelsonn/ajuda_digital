@@ -33,7 +33,7 @@ const teamMembers: TeamMember[] = [
     bio: "Big Data Engineer at Viettel Timor and passionate about Artificial Intelligence and Machine Learning.",
     image: "/images/team-member-1.jpg",
     skills: ["Check : www.ajitonelson.com"],
-    certificate: "https://www.virtualbadge.io/certificate-validator?credential=63e1cd3b-21f9-4342-8ae5-948a0d539552",
+    certificate: "https://www.virtualbadge.io/certificate-validator?credential=5643b976-08e9-4a40-87e9-cf0a05517ae6",
     social: {
       github: "https://github.com/ajitonelsonn",
       linkedin: "https://linkedin.com/in/ajitonelson",
@@ -45,7 +45,7 @@ const teamMembers: TeamMember[] = [
     bio: "Fresh graduate from Universidade Nacional Timor Lorosa'e (UNTL) with a Licenciatura em Engenharia Informática (L.Eng.Inf). Passionate about using new technologies like AI and others to solve real problems.",
     image: "/images/team-member-2.jpg",
     skills: ["UI/UX", "Networking"],
-    certificate: "https://www.virtualbadge.io/certificate-validator?credential=d35105ca-41da-47b4-a171-f8003d595138",
+    certificate: "https://www.virtualbadge.io/certificate-validator?credential=6d66875c-eef7-4084-a653-9f0881ca290b",
     social: {
       github: "https://github.com/Jedinilda20",
       linkedin: "https://linkedin.com/in/jedinildadosreis",
@@ -57,7 +57,7 @@ const teamMembers: TeamMember[] = [
     bio: "Second-year Bachelor student in Computer Science at Dili Institute of Technology (DIT), with a strong interest in learning new technologies.",
     image: "/images/team-member-3.jpg",
     skills: ["Python", "Java", "MySQL"],
-    certificate: "https://www.virtualbadge.io/certificate-validator?credential=9864edea-a1a1-4389-b309-2c94e0fc28c8",
+    certificate: "https://www.virtualbadge.io/certificate-validator?credential=f1ff1a8f-73bb-4ded-bc1f-0a7226f171ba",
     social: {
       github: "https://github.com/abraog",
       linkedin: "https://linkedin.com/in/abraoglorito",
