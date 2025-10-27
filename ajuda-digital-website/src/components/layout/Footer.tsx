@@ -114,7 +114,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://forms.gle/VzKciePuvih1Uau7A"
+                  href="https://github.com/ajitonelsonn/ajuda_digital"
                   className="text-gray-300 hover:text-white transition-all duration-300 flex items-center space-x-3 group p-2 rounded-lg hover:bg-gray-800/30"
                   target="_blank"
                   rel="noopener noreferrer"

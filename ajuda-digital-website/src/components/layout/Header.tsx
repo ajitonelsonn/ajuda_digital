@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Trophy } from "lucide-react";
 import LanguageSelector from "../LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -18,6 +18,27 @@ export default function Header() {
 
   return (
     <header className="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-red-100">
+      {/* Winner Announcement Scrolling Banner */}
+      <div className="bg-gradient-to-r from-red-600 via-yellow-500 to-red-600 text-white overflow-hidden">
+        <div className="animate-marquee whitespace-nowrap py-2 flex items-center">
+          <span className="inline-flex items-center mx-4">
+            <Trophy size={16} className="mr-2" />
+            <span className="font-semibold">🏆 Winner: Most Innovative Use of SEA-LION - Pan-SEA AI Developer Challenge 2025</span>
+          </span>
+          <span className="inline-flex items-center mx-4">
+            <Trophy size={16} className="mr-2" />
+            <span className="font-semibold">🏆 Winner: Most Innovative Use of SEA-LION - Pan-SEA AI Developer Challenge 2025</span>
+          </span>
+          <span className="inline-flex items-center mx-4">
+            <Trophy size={16} className="mr-2" />
+            <span className="font-semibold">🏆 Winner: Most Innovative Use of SEA-LION - Pan-SEA AI Developer Challenge 2025</span>
+          </span>
+          <span className="inline-flex items-center mx-4">
+            <Trophy size={16} className="mr-2" />
+            <span className="font-semibold">🏆 Winner: Most Innovative Use of SEA-LION - Pan-SEA AI Developer Challenge 2025</span>
+          </span>
+        </div>
+      </div>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
