@@ -72,9 +72,9 @@ export default function VisitorCounter() {
 
   if (loading) {
     return (
-      <div className="bg-gray-800/50 rounded-lg p-4 backdrop-blur-sm">
+      <div className="bg-gray-800/50 dark:bg-gray-900/50 rounded-lg p-4 backdrop-blur-sm">
         <div className="flex items-center space-x-2 mb-3">
-          <Globe className="text-blue-400 animate-spin" size={18} />
+          <Globe className="text-blue-400 dark:text-blue-300 animate-spin" size={18} />
           <h4 className="text-white font-semibold">Loading Visitors...</h4>
         </div>
       </div>
@@ -86,7 +86,7 @@ export default function VisitorCounter() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-to-br from-gray-800/60 via-gray-800/40 to-gray-900/60 rounded-xl p-5 backdrop-blur-sm border border-gray-600/30 shadow-xl"
+      className="bg-gradient-to-br from-gray-800/60 via-gray-800/40 to-gray-900/60 dark:from-gray-900/60 dark:via-gray-900/40 dark:to-black/60 rounded-xl p-5 backdrop-blur-sm border border-gray-600/30 dark:border-gray-700/30 shadow-xl"
     >
       <div className="flex items-center space-x-3 mb-4">
         <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
@@ -125,20 +125,20 @@ export default function VisitorCounter() {
             <div className="flex items-center space-x-1">
               <button
                 onClick={prevPage}
-                className="p-1 bg-gray-700/60 hover:bg-gray-600/80 rounded-md transition-all duration-200 hover:scale-110"
+                className="p-1 bg-gray-700/60 dark:bg-gray-800/60 hover:bg-gray-600/80 dark:hover:bg-gray-700/80 rounded-md transition-all duration-200 hover:scale-110"
                 aria-label="Previous countries"
               >
-                <ChevronLeft size={14} className="text-gray-300" />
+                <ChevronLeft size={14} className="text-gray-300 dark:text-gray-400" />
               </button>
               <span className="text-xs text-gray-400 px-2">
                 {currentPage + 1}/{totalPages}
               </span>
               <button
                 onClick={nextPage}
-                className="p-1 bg-gray-700/60 hover:bg-gray-600/80 rounded-md transition-all duration-200 hover:scale-110"
+                className="p-1 bg-gray-700/60 dark:bg-gray-800/60 hover:bg-gray-600/80 dark:hover:bg-gray-700/80 rounded-md transition-all duration-200 hover:scale-110"
                 aria-label="Next countries"
               >
-                <ChevronRight size={14} className="text-gray-300" />
+                <ChevronRight size={14} className="text-gray-300 dark:text-gray-400" />
               </button>
             </div>
           )}
@@ -157,7 +157,7 @@ export default function VisitorCounter() {
               }}
               className="group relative"
             >
-              <div className="flex flex-col items-center space-y-1 bg-gradient-to-b from-gray-700/60 to-gray-800/60 hover:from-gray-600/80 hover:to-gray-700/80 rounded-lg px-2 py-2.5 text-xs transition-all duration-300 cursor-pointer border border-gray-600/30 hover:border-gray-500/50 hover:scale-105">
+              <div className="flex flex-col items-center space-y-1 bg-gradient-to-b from-gray-700/60 to-gray-800/60 dark:from-gray-800/60 dark:to-gray-900/60 hover:from-gray-600/80 hover:to-gray-700/80 dark:hover:from-gray-700/80 dark:hover:to-gray-800/80 rounded-lg px-2 py-2.5 text-xs transition-all duration-300 cursor-pointer border border-gray-600/30 dark:border-gray-700/30 hover:border-gray-500/50 dark:hover:border-gray-600/50 hover:scale-105">
                 <span className="text-lg filter drop-shadow-sm">
                   {country.flag}
                 </span>

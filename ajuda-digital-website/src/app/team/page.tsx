@@ -90,7 +90,7 @@ export default function TeamPage() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-red-50 to-yellow-50">
+      <section className="py-20 bg-gradient-to-r from-red-50 to-yellow-50 dark:from-red-950/20 dark:to-yellow-950/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -98,17 +98,17 @@ export default function TeamPage() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
               Meet Our{" "}
               <span className="bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent">
                 Team
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
               From Timor-Leste youth, for Timor-Leste — turning ideas into
               reality.
             </p>
-            <div className="flex items-center justify-center space-x-2 text-red-600">
+            <div className="flex items-center justify-center space-x-2 text-red-600 dark:text-red-400">
               <MapPin size={20} />
               <span className="text-lg font-medium">
                 Made in Timor-Leste 🇹🇱
@@ -119,7 +119,7 @@ export default function TeamPage() {
       </section>
 
       {/* Team Members */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
@@ -128,7 +128,7 @@ export default function TeamPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-100 relative"
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl dark:shadow-gray-900/50 transition-shadow overflow-hidden border border-gray-100 dark:border-gray-700 relative"
               >
                 {/* Winner Certificate Badge */}
                 {member.certificate && (
@@ -144,7 +144,7 @@ export default function TeamPage() {
                 )}
 
                 {/* Profile Image */}
-                <div className="relative h-64 bg-gradient-to-br from-red-100 to-yellow-100 overflow-hidden">
+                <div className="relative h-64 bg-gradient-to-br from-red-100 to-yellow-100 dark:from-red-900/30 dark:to-yellow-900/30 overflow-hidden">
                   <Image
                     src={member.image}
                     alt={`${member.name} - ${member.role}`}
@@ -178,11 +178,11 @@ export default function TeamPage() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-red-600 font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
+                  <p className="text-red-600 dark:text-red-400 font-medium mb-3">{member.role}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{member.bio}</p>
 
                   {/* Skills */}
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -203,7 +203,7 @@ export default function TeamPage() {
                             }
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-2 py-1 bg-red-50 text-red-600 text-xs rounded-full hover:bg-red-100 transition-colors cursor-pointer"
+                            className="px-2 py-1 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-xs rounded-full hover:bg-red-100 dark:hover:bg-red-900/50 transition-colors cursor-pointer"
                           >
                             {displayText}
                           </a>
@@ -213,7 +213,7 @@ export default function TeamPage() {
                       return (
                         <span
                           key={skillIndex}
-                          className="px-2 py-1 bg-red-50 text-red-600 text-xs rounded-full"
+                          className="px-2 py-1 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-xs rounded-full"
                         >
                           {skill}
                         </span>
@@ -226,7 +226,7 @@ export default function TeamPage() {
                     {member.social.github && (
                       <a
                         href={member.social.github}
-                        className="text-gray-400 hover:text-gray-600 transition-colors"
+                        className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -236,7 +236,7 @@ export default function TeamPage() {
                     {member.social.linkedin && (
                       <a
                         href={member.social.linkedin}
-                        className="text-gray-400 hover:text-blue-600 transition-colors"
+                        className="text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -246,7 +246,7 @@ export default function TeamPage() {
                     {member.social.email && (
                       <a
                         href={`mailto:${member.social.email}`}
-                        className="text-gray-400 hover:text-red-600 transition-colors"
+                        className="text-gray-400 dark:text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors"
                       >
                         <Mail size={20} />
                       </a>
@@ -260,7 +260,7 @@ export default function TeamPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -268,10 +268,10 @@ export default function TeamPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">
               Our Values
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               The principles that guide our work and drive our mission to
               democratize access to government services in Timor-Leste.
             </p>
@@ -284,15 +284,15 @@ export default function TeamPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-md text-center"
+                className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md dark:shadow-gray-900/50 text-center"
               >
-                <div className="bg-gradient-to-r from-red-100 to-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="text-red-600" size={28} />
+                <div className="bg-gradient-to-r from-red-100 to-yellow-100 dark:from-red-900/30 dark:to-yellow-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="text-red-600 dark:text-red-400" size={28} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
                   {value.title}
                 </h3>
-                <p className="text-gray-600">{value.description}</p>
+                <p className="text-gray-600 dark:text-gray-400">{value.description}</p>
               </motion.div>
             ))}
           </div>

@@ -8,7 +8,7 @@ import VisitorCounter from "@/components/VisitorCounter";
 export default function Footer() {
   const { t } = useLanguage();
   return (
-    <footer className="relative bg-gradient-to-b from-gray-900 via-gray-900 to-black text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-b from-gray-900 via-gray-900 to-black dark:from-black dark:via-gray-950 dark:to-black text-white overflow-hidden">
       {/* Background Image with enhanced overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -51,7 +51,7 @@ export default function Footer() {
             <p className="text-gray-300 max-w-md leading-relaxed mb-6">
               {t("footer.description")}
             </p>
-            <div className="flex items-center space-x-2 px-3 py-2 bg-gray-800/50 rounded-lg backdrop-blur-sm border border-gray-700/50 w-fit">
+            <div className="flex items-center space-x-2 px-3 py-2 bg-gray-800/50 dark:bg-gray-900/50 rounded-lg backdrop-blur-sm border border-gray-700/50 dark:border-gray-800/50 w-fit">
               <MapPin size={16} className="text-red-400" />
               <span className="text-gray-300 text-sm font-medium">
                 {t("footer.madeInTimorLeste")} 🇹🇱
@@ -134,7 +134,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 dark:border-gray-900 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">{t("footer.copyright")}</p>
           <p className="text-gray-400 text-sm mt-2 sm:mt-0">
             {t("footer.poweredBy")}
