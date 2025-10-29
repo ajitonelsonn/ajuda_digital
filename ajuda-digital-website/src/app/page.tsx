@@ -124,19 +124,19 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-gray-100 mb-6">
               <TextReveal className="bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent">
                 {t("hero.title")}
               </TextReveal>
             </h1>
             <TextReveal
-              className="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto block"
+              className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto block"
               delay={0.2}
             >
               {t("hero.subtitle")}
             </TextReveal>
             <TextReveal
-              className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto block"
+              className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto block"
               delay={0.4}
               staggerChildren={0.05}
             >
@@ -185,7 +185,7 @@ export default function HomePage() {
       </section>
 
       {/* Problem Statement */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -193,11 +193,11 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <TextReveal className="text-4xl font-bold text-gray-900 mb-6">
+            <TextReveal className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">
               🚧 {t("challenges.title")}
             </TextReveal>
             <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
                 {t("challenges.description")}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -252,7 +252,7 @@ export default function HomePage() {
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="aspect-video relative bg-white p-4">
+                      <div className="aspect-video relative bg-white dark:bg-gray-800 p-4">
                         <Image
                           src={challenge.image}
                           alt={challenge.title}
@@ -283,7 +283,7 @@ export default function HomePage() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: index * 0.2 + 0.4 }}
-                        className="text-gray-700 leading-relaxed"
+                        className="text-gray-700 dark:text-gray-300 leading-relaxed"
                       >
                         {challenge.description}
                       </motion.p>
@@ -302,7 +302,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -310,10 +310,10 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <TextReveal className="text-4xl font-bold text-gray-900 mb-6">
+            <TextReveal className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">
               {t("features.title")}
             </TextReveal>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               {t("features.description")}
             </p>
           </motion.div>
@@ -325,15 +325,15 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg dark:shadow-gray-900/50 transition-shadow"
               >
-                <div className="bg-gradient-to-r from-red-100 to-yellow-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                  <feature.icon className="text-red-600" size={24} />
+                <div className="bg-gradient-to-r from-red-100 to-yellow-100 dark:from-red-900/30 dark:to-yellow-900/30 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <feature.icon className="text-red-600 dark:text-red-400" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-gray-600 dark:text-gray-400">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -341,7 +341,7 @@ export default function HomePage() {
       </section>
 
       {/* Technology Stack */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -349,10 +349,10 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <TextReveal className="text-4xl font-bold text-gray-900 mb-6">
+            <TextReveal className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">
               {t("technology.title")}
             </TextReveal>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-12">
               {t("technology.description")}
             </p>
           </motion.div>
@@ -368,7 +368,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.08, y: -8 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl border-0 transition-all duration-500 cursor-pointer block overflow-hidden"
+                className="group relative bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl dark:shadow-gray-900/50 border-0 transition-all duration-500 cursor-pointer block overflow-hidden"
               >
                 {/* Background gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 via-transparent to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -381,7 +381,7 @@ export default function HomePage() {
                   {/* Logo container with enhanced styling */}
                   <div className="flex justify-center mb-6">
                     <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+                      <div className="w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-600 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
                         <Image
                           src={tech.logo}
                           alt={`${tech.name} logo`}
@@ -396,12 +396,12 @@ export default function HomePage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 text-center mb-3 group-hover:text-gray-800 transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 text-center mb-3 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors">
                     {tech.name}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-sm text-center leading-relaxed group-hover:text-gray-700 transition-colors">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm text-center leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
                     {tech.description}
                   </p>
 
@@ -420,7 +420,7 @@ export default function HomePage() {
           >
             <Link
               href="/datasets"
-              className="inline-flex items-center space-x-2 text-red-600 hover:text-red-700 font-medium"
+              className="inline-flex items-center space-x-2 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium"
             >
               <Database size={20} />
               <span>{t("technology.exploreDatasets")}</span>
