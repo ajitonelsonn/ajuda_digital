@@ -218,10 +218,6 @@ _Or register with your own account_
 
 ## 🏆 **Pan-SEA AI Challenge 2025**
 
-**Hackathon Track:** Public Sector  
-**Team:** Ajuda Digital  
-**Country:** Timor-Leste 🇹🇱
-
 ---
 
 ![Tais Traditional Pattern](Picture/tais.png)
