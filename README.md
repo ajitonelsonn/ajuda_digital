@@ -193,27 +193,6 @@ _Or register with your own account_
 | 📊 **Data Processing**    | Document processing pipeline | [Data Processing](Prosses-Data/README.MD)                             |
 | 📋 **Dataset Collection** | Government data sources      | [Dataset Status](https://www.ajuda-digital.com/dataset)               |
 
-## 🚀 **Future Roadmap**
-
-### **📈 Immediate Next Steps**
-
-- **Complete remaining 6 models** - Education, Health, Finance, etc.
-- **Enhanced data collection** - Government partnership for official datasets
-- **Mobile application** - Native iOS/Android apps for better accessibility
-
-### **🌟 Long-term Vision**
-
-- **Government integration** - Official adoption as citizen service platform
-- **Regional expansion** - Template for other Southeast Asian countries
-- **Advanced AI features** - Voice interaction, document auto-completion
-- **Citizen feedback integration** - Continuous improvement based on user data
-
-### **🤝 Government Partnership Opportunities**
-
-- **Official data access** - Partnership with government ministries
-- **Digital transformation** - Supporting Timor-Leste's AI implementation goals
-- **Training and capacity building** - Local expertise development
-
 ---
 
 ## 🏆 **Pan-SEA AI Challenge 2025**
